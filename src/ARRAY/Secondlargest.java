@@ -9,11 +9,15 @@ public class Secondlargest {
                 max2=max1;
                 max1=arr[i];
             }
+            else if(arr[i]>max2 && max1!=arr[i]){  //because we are ilterate through max1 (12 35 1 10 34 1) 34 miss ho jayega to handle this type
+                max2=arr[i];
+            }
+            if(max1==max2) return -1;
         }
         return max2;
     }
     public static void main(String[] args) {
-        int arr[]={4,2,66,43,2,66,99,6,4};
+        int arr[]={12 ,35, 1 ,10, 34 ,1};
         System.out.println(secondLargest(arr));
     }
 }
