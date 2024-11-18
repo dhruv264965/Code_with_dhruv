@@ -1,7 +1,8 @@
 package MultiThreading;
 //The volatile keyword in Java is used to ensure that the value of a variable is always read from and written to the main memory,
 // rather than being cached locally by threads.
-//volatile keyword: The volatile keyword ensures that the counter variable is directly read from and written to the main memory. This means that when one thread modifies the value of counter, other threads immediately see the updated value, avoiding cache coherence issues that can arise when threads work with local copies of a variable.
+//volatile keyword: The volatile keyword ensures that the counter variable is directly read from and written to the main memory.
+// This means that when one thread modifies the value of counter, other threads immediately see the updated value, avoiding cache coherence issues that can arise when threads work with local copies of a variable.
 //
 //Thread t1:
 //
@@ -23,7 +24,7 @@ public class VolatileKeywordss {
             int local_counter=counter; ///store value in cache memory
             while (local_counter<10){
                 if(local_counter!=counter){
-                    System.out.println("T1 is changed "+counter*2);
+                    System.out.println("T1 is changed "+counter);
                     local_counter=counter;
                 }
             }
@@ -43,9 +44,9 @@ public class VolatileKeywordss {
         });
         t1.start();
         t2.start();
-
-
-
-
     }
 }
+//The volatile keyword cannot be used with methods or classes, it only applies to variables.
+//In this example, each player thread increments the counter by 1 and prints its updated value. However, we need to use the volatile keyword to avoid inconsistencies in the counter.
+//
+//Without volatile, the counter variable may be cached in the CPU registers, and each thread may have its own local copy. As a result, one player thread may update the counter, but other threads may not immediately see the updated value due to caching.
