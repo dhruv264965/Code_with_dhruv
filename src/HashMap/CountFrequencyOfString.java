@@ -14,6 +14,14 @@ public class CountFrequencyOfString {
             }
         }
         System.out.println(map);
+        System.out.println();
+        // Construct the formatted output
+        StringBuilder result = new StringBuilder();
+        for (char key : map.keySet()) {
+            result.append(key).append(map.get(key));
+        }
+
+        System.out.println(result.toString());
     }
 
     public static void main(String[] args) {

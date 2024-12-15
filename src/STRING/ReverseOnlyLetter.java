@@ -10,8 +10,9 @@ public class ReverseOnlyLetter {
                 int temp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = (char) temp;
-                j--;
+
                 i++;
+                j--;
             }
             else if (!isEnglish(arr[i])) {
                 i++;
@@ -32,6 +33,7 @@ public class ReverseOnlyLetter {
 
     public static void main(String[] args) {
         String s="a-bC-dEf-ghIj";
+      //  String s="Dhruv Shukla is a good boy";
         System.out.println(reverseOnlyLetters(s));
 
     }

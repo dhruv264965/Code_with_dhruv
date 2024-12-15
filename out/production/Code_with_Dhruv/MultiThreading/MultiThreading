@@ -73,3 +73,27 @@ there can be issues with memory visibility and reordering.
 results.
 3-By declaring a variable as volatile, we ensure that updates to that variable are immediately visible to other threads. It prevents
 the processor and compiler from reordering instructions involving the volatile variable, maintaining the intended program order.
+------------------------------------------------------------------------------------------------------------------------------------------------
+1. Race Condition
+A race condition happens when two or more processes try to access the same resource at the same time without proper coordination.
+This “race” can lead to incorrect results or unpredictable behavior because the order of execution is not controlled.
+Example: Two people trying to edit the same document at the same time, causing one’s changes to overwrite the other’s.
+2. Deadlock
+A deadlock occurs when two or more processes are waiting for each other to release resources, and none can proceed.
+It’s like a standstill where each process is holding a resource the other needs, leading to a complete freeze.
+Example: Two cars stuck in a narrow road from opposite directions, each refusing to move back and waiting for the other.
+3. Thread Block
+Thread blocking happens when a thread is unable to continue its work because it’s waiting for a resource that’s currently
+ unavailable. It pauses until the resource is free.
+Example: A cashier waiting for the customer ahead to finish paying before attending to the next person in line.
+
+--------------------------------------------------------------------------------------------------------------------------------------
+Callable- Java offers two ways for creating a thread, i.e., by extending the Thread class and by creating a thread with a Runnable. There is
+a drawback of creating a thread with the Runnable interface, i.e., we cannot make a thread return result when it terminates, i.e.,
+ when the run() completes. In order to overcome this drawback, Java provides the Callable interface.
+
+These are the two main differences between the Callable and Runnable methods:
+The run() method is used for implementing the Runnable, whereas the call() method is used for implementing the Callable. The run() method doesn't return anything, whereas the call() method returns a result of completion.
+The call() method can throw an exception, whereas the run() method cannot.
+Future-Future is used for storing a result received from a different thread, whereas Callable is the same as Runnable in that it
+encapsulates a task that is meant to be run on another thread.
