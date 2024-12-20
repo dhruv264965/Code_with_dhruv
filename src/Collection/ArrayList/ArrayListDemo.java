@@ -1,9 +1,6 @@
 package Collection.ArrayList;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class ArrayListDemo {
     public static void main(String[] args) {
@@ -66,5 +63,34 @@ public class ArrayListDemo {
         System.out.println("Original list: " + list_Strings);
         List<String> sub_List = list_Strings.subList(0, 3);
         System.out.println("List of first three elements: " + sub_List);
+
+        System.out.println("-----------------------------------------------------------------------------------------------------------------------------");
+        List<String> l1=Arrays.asList("mon","tue");
+        System.out.println(l1);
+        //l1.add("Wed");   not able to add will get exception.. this is not from list interface
+                          // add delete not possible but we can set the data
+        l1.set(1,"wed");
+        System.out.println(l1);
+
+        System.out.println("-----------------------------------------------------------------------------------------------------------------------------");
+      List<Integer>l2=  List.of(1,2,3,4,5);
+        System.out.println(l2);  //here add,delete,modify not possible
+
+        System.out.println("-----------------------------------------------------------------------------------------------------------------------------");
+       List<Integer>l4=new ArrayList<>();
+       l4.add(5);
+       l4.add(6);
+       l4.add(7);
+       l4.add(8);
+       l4.add(9);
+        System.out.println(l4);
+        l4.remove(1); ///remove 1st index
+        l4.remove(Integer.valueOf(7)); //remove value
+        System.out.println(l4);
+        System.out.println("-------------------------------------------------");
+
+        Integer[] array1=l4.toArray(new Integer[0]);
+        for(int x :array1)
+        System.out.println(x);
     }
 }

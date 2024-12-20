@@ -3,8 +3,7 @@ package SlidingWindow;
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class
-MaxDistinctSubArraySumOfSizeK {
+public class MaxDistinctSubArraySumOfSizeK {
     static int maxDistinctSubArraySumOfSizeKBruteForece(int arr[],int k,int n) {  //T.C.: O(N^2) S.C.: O(N)
      //   int sum=0;
         int max=0;

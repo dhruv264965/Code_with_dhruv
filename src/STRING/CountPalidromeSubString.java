@@ -22,7 +22,8 @@ public class CountPalidromeSubString {
             }
         }
         System.out.println();
-        System.out.println(count);    }
+        System.out.println(count);
+    }
     public static void main(String[] args) {
         String str="addaa";
         int count =0;
