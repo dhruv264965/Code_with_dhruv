@@ -17,10 +17,11 @@ public class SortCharacterMyFrequency {
                 hp.put(ch,1);
             }
         }
-       // System.out.println(hp);
+        System.out.println(hp);
         StringBuilder result = new StringBuilder();
         List<Map.Entry<Character, Integer>> list = new ArrayList<>(hp.entrySet());// create a list and sort the freq
         list.sort((a, b) ->b.getValue()-a.getValue());   // Sort by frequency in descending order
+        System.out.println(list);
 
         // Step 3: Print characters in sorted order by frequency
         for (Map.Entry<Character, Integer> entry : list) {
