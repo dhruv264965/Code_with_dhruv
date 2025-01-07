@@ -24,18 +24,13 @@ public class MatchWordInGivenString {
         }
         return count;
     }
-    static int matchWordInGivenstringUsingSplit(String str,String target){
-        String[] parts=str.split("cat");
-        int count =parts.length-1;
-         return count;
-    }
+
 
     public static void main(String[] args) {
-        String str="dogcat cat dogcatdog";
+        String str="dogcat cat dogcatdog dogdog catcatcat";
         String target="cat";
-       // matchWordInGivenstringUsingPatternAndMatcher(str,target);
-       // System.out.println(matchWordInGivenstring(str,target));
-        System.out.println(matchWordInGivenstringUsingSplit(str,target));
+        matchWordInGivenstringUsingPatternAndMatcher(str,target);
+        System.out.println(matchWordInGivenstring(str,target));
 
     }
 }

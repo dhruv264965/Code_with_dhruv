@@ -41,6 +41,24 @@ public class Anagram {
         return true;
 
     }
+    public static boolean checkAnagram1(String s1, String s2){
+        if(s1.length()!=s2.length()) return false;
+        HashMap<Character,Integer>freq=new HashMap<>();
+        for(int i=0;i<s1.length();i++){
+            char ch=s1.charAt(i);
+            freq.put(ch,freq.getOrDefault(ch,0)+1);
+        }
+        for(int i=0;i<s2.length();i++){
+            char ch=s2.charAt(i);
+            freq.put(ch,freq.getOrDefault(ch,0)-1);
+        }
+        for(Character c:freq.keySet()){
+            if(freq.get(c)!=0){
+                return false;
+            }
+        }
+        return true;
+    }
     public static boolean checkAnagramOptimal(String s1, String s2){
         if(s1.length()!=s2.length()) return false;
         char arr1[]=s1.toCharArray();
@@ -51,12 +69,16 @@ public class Anagram {
     }
 
     public static void main(String[] args) {
-        String s1="absew";
+        String s1="abcda";
         String s2="acbed";
 //        if(checkAnagram(s1,s2))
 //            System.out.println("true");
 //        else
 //            System.out.println("false");
-        System.out.println(checkAnagramOptimal(s1,s2));
+       // System.out.println(checkAnagramOptimal(s1,s2));
+        if (checkAnagram1(s1,s2))
+            System.out.println("String are anagram");
+        else
+            System.out.println("String are not anagram");
     }
 }
