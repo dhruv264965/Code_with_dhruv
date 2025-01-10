@@ -1,0 +1,7 @@
+Encapsulation is defined as the wrapping up of data under a single unit.
+It is the mechanism that binds together code and the data it manipulates.
+combines data and methods in a class.
+dvantages of Encapsulation
+Data Hiding: Encapsulation provides data hiding. Users don’t see the implementation of the class.
+The user only knows that we are passing the values to a setter method and variables are getting initialized with
+that value.

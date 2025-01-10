@@ -8,4 +8,7 @@ public interface Interface1 {
     static public void world(){
         System.out.println("static method is called");
     }
+     void eat();
+
+
 }

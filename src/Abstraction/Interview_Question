@@ -1,0 +1,7 @@
+An abstract class is a class that is declared with an abstract keyword.
+An abstract method is a method that is declared without implementation.
+An abstract class may or may not have all abstract methods. Some of them can be concrete methods
+We can not create object of abstract class.
+By default abstact class has parametrised method
+No, you cannot create abstract variables in an abstract class in Java.
+ Abstract is a concept that applies to methods and classes, not to variables.

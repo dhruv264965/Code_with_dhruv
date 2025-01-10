@@ -47,7 +47,7 @@ public class FindDuplicateWord {
         }
     }
     public static void main(String[] args) {
-        String str="Big black bug bit a big black dog on his big black nose";
+        String str="Big black bug bit a  black dog on his big black nose";
       //  findDuplicateWordInAStringBruteForce(str);
         findDuplicateWordInAStringOptimalForce(str);
     }
