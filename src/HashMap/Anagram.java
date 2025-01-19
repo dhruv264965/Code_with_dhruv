@@ -12,12 +12,13 @@ public class Anagram {
         HashMap<Character,Integer>map=new HashMap<>();
         for(int i=0;i<s1.length();i++)
         {
-            if(map.containsKey(s1.charAt(i)))
+            char ch=s1.charAt(i);
+            if(map.containsKey(ch))
             {
-               map.put(s1.charAt(i),map.get(s1.charAt(i))+1);
+               map.put(ch,map.get(ch)+1);
             }
             else {
-                map.put(s1.charAt(i),1);
+                map.put(ch,1);
             }
         }
         for(int i=0;i<s2.length();i++)

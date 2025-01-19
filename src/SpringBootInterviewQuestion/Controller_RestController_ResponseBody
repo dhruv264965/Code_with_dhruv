@@ -1,4 +1,4 @@
-1. @Controller
+    1. @Controller
 Purpose
 Used to define a controller in a Spring MVC application for handling web requests.
 Typically used for web applications that return HTML views (server-side rendered pages) or other response types like files.

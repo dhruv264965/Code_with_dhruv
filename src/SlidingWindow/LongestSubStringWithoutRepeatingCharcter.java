@@ -9,7 +9,7 @@ public class LongestSubStringWithoutRepeatingCharcter {
         HashSet<Character>unique=new HashSet<>();
         for(int i=start;i<=end;i++){
             char ch=s.charAt(i);
-            if(unique.contains(ch)){
+            if(unique.contains(ch)){   // geeksforgeeks  --
                 return false;
             }
             unique.add(ch);
@@ -35,20 +35,21 @@ public class LongestSubStringWithoutRepeatingCharcter {
         int j = 0;
         while (j < s.length()) {
             char ch = s.charAt(j);
-            if (hash_map.containsKey(ch)) {
+            if (hash_map.containsKey(ch)) {   //  // agar hamara character repeat karta hai then i index koupdate kar denge
                 i = Math.max(hash_map.get(ch), i);
             }
             result = Math.max(result, j - i + 1);
-            hash_map.put(ch, j + 1);
+            hash_map.put(ch, j + 1);  // storing index +1 because if j=0 and value is "a" then it will sore[a:1]
             j++;
         }
         return result;
     }
     public static void main(String[] args) {
 //         String s="abcabcbb";
-         String s="pwwkew";
+//         String s="pwwkew";
 //         String s="bbbbb";
-       // System.out.println(lengthOfLongestSubStringWithoutRepeatingCharacterBruteForce(s));
+        String s="geeksforgeeks";
+//        System.out.println(lengthOfLongestSubStringWithoutRepeatingCharacterBruteForce(s));
         System.out.println(lengthOfLongestSubStringWithoutRepeatingCharacterOptimal(s));
     }
 }
