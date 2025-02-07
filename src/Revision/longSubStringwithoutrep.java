@@ -9,7 +9,7 @@ public class longSubStringwithoutrep {
         int i=0,j=0,result=0;
         while (j<s.length()){
             char c=s.charAt(j);
-            if(mp.containsKey(c)){ // agar hamara character repeat karta hai then i index koupdate kar denge
+            if(mp.containsKey(c)){ // agar hamara character repeat karta hai then i index ko update kar denge
                 i=Math.max(mp.get(c),i);
             }
             result=Math.max(result,j-i+1);

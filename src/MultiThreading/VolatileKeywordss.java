@@ -23,7 +23,7 @@ package MultiThreading;
 // incremented.
 //t1 will monitor changes in the counter. Whenever counter is updated by t2, t1 will print "T1 is changed"
 // along with the new value.
-public class VolatileKeywordss {
+public class      VolatileKeywordss {
     private static volatile int  counter=0;
     public static void main(String[] args) {
         Thread t1=new Thread(()->{

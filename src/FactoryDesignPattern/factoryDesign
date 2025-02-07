@@ -1,9 +1,29 @@
-The Factory Method pattern is a creational design pattern that provides an interface for creating objects
-in a superclass but allows subclasses to alter the type of objects that will be created.
-It encapsulates the object creation logic, decoupling it from the client code that uses the objects.
 
+Defination->A factory design pattern says that just define interface or abstract class for creating an object
+            but let the subclasses decide which class to instantiate. In other word subclasses are responsible to
+            create the instance of a class
+-> Agar hamare pass parent class hai and bahut sare childclass hai if we want child class object then we use factory design pattern
 When to Use Factory Method Design Pattern?
-
+Object Creation is Complex – When the process of creating objects is complicated, such as requiring multiple configurations or dependencies.
+Decoupling Object Creation from Client Code – If you want to avoid exposing the instantiation logic and keep the client code independent of specific class implementations.
+Enhancing Code Maintainability and Scalability – When new classes need to be added frequently without modifying existing client code.
+Managing Object Creation Based on Input or Conditions – When the type of object created depends on some condition, such as user input, configuration, or runtime environment.
+Improving Testability – By centralizing object creation, the Factory Pattern makes it easier to replace real objects with mocks or stubs for unit testing.
+When You Have a Superclass with Multiple Subclasses – If a class has multiple subclasses, and the client code needs to work with their instances without knowing their concrete implementation.
 
 
 Advantages of Factory Method Design Pattern-
+✅ Encapsulation of Object Creation
+Hides the complex instantiation logic from the client, making the code cleaner and more maintainable.
+
+✅ Loose Coupling
+The client code depends only on the factory and the common interface, not on concrete implementations, reducing dependencies.
+✅ Easier Maintenance and Scalability
+New classes can be introduced without modifying existing client code.
+✅ Improved Code Reusability
+The same factory method can be reused to create different objects.
+✅ Centralized Control Over Object Creation
+Ensures consistent object creation logic and better management of instance creation.
+✅ Encourages Open/Closed Principle (OCP) from SOLID Principles
+
+New types can be added without modifying existing code, making the system extensible.

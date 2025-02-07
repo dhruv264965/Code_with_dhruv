@@ -2,7 +2,8 @@ package SlidingWindow;
 
 import java.util.HashSet;
 
-public class MaxSubArrayOfSizeK {
+public class
+MaxSubArrayOfSizeK {
     static int maxSubArrayOfSizeK(int arr[], int n, int k) { ///T.C.: O(N) S.C.: O(1)
         int i = 0;
         int j = 0;

@@ -19,6 +19,7 @@ public class thirdMostFreqElemInArray {
         //method-1
         List<Map.Entry<Integer, Integer>> sortedEntries = new ArrayList<>(freq.entrySet());
         sortedEntries.sort((a,b)->b.getValue().compareTo(a.getValue()));
+//        sortedEntries.sort((a,b)->b.getValue()- a.getValue());
         System.out.println(sortedEntries);
       //method-2
 //        List<Map.Entry<Integer,Integer>> sort=freq.entrySet().stream().sorted((e1, e2)-> e2.getValue().compareTo(e1.getValue())).collect(Collectors.toList());
@@ -26,7 +27,7 @@ public class thirdMostFreqElemInArray {
 
         // 3rd largest freq element
         if(sortedEntries.size()>3){
-            System.out.println(sortedEntries.get(2).getKey());
+            System.out.println(sortedEntries.get(0).getKey());
         }
         else {
             System.out.println("Not enough distinct elements for a 3rd most frequent element.");

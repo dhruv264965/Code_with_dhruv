@@ -71,13 +71,13 @@ public class CountPairWithGivenSum {
 
     // Driver function to test the above function
     public static void main(String[] args) {
-        int[] arr = {1, 5, 7, -1, 5, 3, 3, 3};
-       // int n = arr.length;
+        int[] arr = {1, 5, 7, -1, 5, 3, 3, 3,6};
+        int n = arr.length;
         int sum = 6;
-     //   printPairs(arr, n, sum);
-       // countPairWithGivenSumBruteForce(arr,sum);
-       //countPairWithGivenSumOptimalSol(arr,sum);
-        findPairsWithGivenSum(arr,sum);
+        printPairs(arr, n, sum);
+//        countPairWithGivenSumBruteForce(arr,sum);
+//       countPairWithGivenSumOptimalSol(arr,sum);
+      //  findPairsWithGivenSum(arr,sum);
     }
 
 }
