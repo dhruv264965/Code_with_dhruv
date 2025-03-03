@@ -1,4 +1,4 @@
-Q->consider a class person , has datafield string name and list<String> degress .. how make  class as immutable.and advantage and disadvantage of immutable
+Q->consider a class person , has data field string name and list<String> degress .. how make  class as immutable.and advantage and disadvantage of immutable
 anser->
 To make the Person class immutable in Java, follow these principles:
 

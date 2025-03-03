@@ -5,3 +5,11 @@ We can not create object of abstract class.
 By default abstact class has parametrised method
 No, you cannot create abstract variables in an abstract class in Java.
  Abstract is a concept that applies to methods and classes, not to variables.
+
+
+ 🔹 Definition: Abstraction is the concept of hiding implementation details and only showing relevant functionalities to the user.
+
+ 🔹 Key Idea:
+
+ Focuses on what an object does rather than how it does it.
+ Achieved using abstract classes and interfaces in Java.

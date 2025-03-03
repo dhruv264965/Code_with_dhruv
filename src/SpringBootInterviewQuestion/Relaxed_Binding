@@ -23,6 +23,7 @@ my_app.myProperty=value
 MY_APP_MYPROPERTY=value
 Benefits:
 Easier to work with environment variables:
-Environment variables often use uppercase and underscores, so relaxed binding allows you to map them to your configuration properties without any extra effort.
+Environment variables often use uppercase and underscores, so relaxed binding allows you to map them to your configuration
+properties without any extra effort.
 More flexibility in naming conventions:
 You can choose the naming convention that best suits your project without worrying about exact matches.

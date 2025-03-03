@@ -8,14 +8,8 @@ import java.util.*;
 public class SortCharacterMyFrequency {
     static String frequencySort(String s){
         HashMap<Character,Integer> hp=new HashMap<>();
-        for (int i=0;i<s.length();i++){
-            char ch=s.charAt(i);
-            if(hp.containsKey(ch)){
-                hp.put(ch,hp.get(ch)+1);
-            }
-            else {
-                hp.put(ch,1);
-            }
+        for(char ch:s.toCharArray()){
+            hp.put(ch,hp.getOrDefault(ch,0)+1);
         }
         System.out.println(hp);
         StringBuilder result = new StringBuilder();

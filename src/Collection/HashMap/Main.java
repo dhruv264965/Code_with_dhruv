@@ -9,6 +9,7 @@ public class Main {
         Employ e1=new Employ(1,"dhruv");
         Employ e2=new Employ(2,"raj");
         Employ e3=new Employ(1,"dhruv");  /// Same as e1 based on id and name
+        System.out.println(map);
         map.put(e1,"manger");
         map.put(e2,"developer");
         // Retrieve values

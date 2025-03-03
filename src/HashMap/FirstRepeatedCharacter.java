@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 public class FirstRepeatedCharacter {
     public static void main(String[] args) {
-        String str = "Javav Stream Api is very good concept";
+        String str = "Javav";
         HashSet<Character> map = new HashSet<>();
 
         for (char ch : str.toCharArray()) {

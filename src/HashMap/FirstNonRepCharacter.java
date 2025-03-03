@@ -6,7 +6,7 @@ import java.util.LinkedHashSet;
 
 public class FirstNonRepCharacter {
     public static void main(String[] args) {
-        String str="swiwss";
+        String str="aaswiwss";
         LinkedHashMap<Character,Integer> map=new LinkedHashMap<>();
         for(char ch:str.toCharArray()){
             map.put(ch,map.getOrDefault(ch,0)+1);

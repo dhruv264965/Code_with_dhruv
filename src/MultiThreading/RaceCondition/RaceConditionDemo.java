@@ -17,10 +17,10 @@ public class RaceConditionDemo {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        //System.out.println("Total Number of Visitors  "+task.getVisitor()); // we are getting 3945 visitor so some vistior are lost.and this is RaceCondition
+        System.out.println("Total Number of Visitors  "+task.getVisitor()); // we are getting 3945 visitor so some vistior are lost.and this is RaceCondition
 
       //  System.out.println("Total Number of Visitors  " + task.getVisitor()); //we are getting 4000 becz- Using AtomicInteger class
-        System.out.println("Total Number of Visitors  " + task.getVisitor()); //we are getting 4000 becz- Using synchronized keyword
+//        System.out.println("Total Number of Visitors  " + task.getVisitor()); //we are getting 4000 becz- Using synchronized keyword
     }
 
 

@@ -3,7 +3,7 @@ The Abstract Factory Design Pattern is a creational pattern that provides an int
  related objects without specifying their concrete classes. It is often referred to as a "factory of factories"
  because it provides a higher level of abstraction compared to the Factory Method Pattern.
 
- When touse-
+ When to  use-
  When object creation should be independent of client code – This ensures that new products can be added without modifying existing client code.
  When enforcing consistency among objects – If you want a set of objects to always be used together, like ensuring UI elements of a specific theme match.
 
@@ -16,6 +16,6 @@ The Abstract Factory Design Pattern is a creational pattern that provides an int
  Key Differences Between Factory Method and Abstract Factory
  Feature	                        Factory Method Pattern	                                                    Abstract Factory Pattern
  Definition	                           A method in a class that creates a specific type of object.	          A factory of factories that creates families of related objects.
- Level of Abstraction	            Focuses on creating a single product.	                                   Focuses on creating multiple related products.
+ Level of OOPS.Abstraction	            Focuses on creating a single product.	                                   Focuses on creating multiple related products.
  Number of Products Created	Creates      one product at a time.	                                              Creates multiple related products together.
  Use Case	                            When a single type of object needs to be created, and subclasses decide which class to instantiate.	                     When a group of related objects needs to be created together.

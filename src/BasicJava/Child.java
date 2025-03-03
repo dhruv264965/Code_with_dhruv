@@ -1,9 +1,9 @@
 package BasicJava;
 
 class Parent {
-//    Parent(){
-//        System.out.println("hiiiii");
-//    }
+    Parent(){
+        System.out.println("hiiiii");
+    }
 
     Parent (String s){
         System.out.println("Parent Class Param  "+s);
@@ -13,13 +13,13 @@ class Parent {
 public class Child extends Parent {
 
     Child (){
-       // super("shukla");
+//        super("dhruv");
          this("dhruv");
         System.out.println("Child Class Default Constructor");
     }
 
     Child (String s){
-        super(s);
+//        super(s);
         System.out.println("Child Class Param Constructor "+s);
     }
 
@@ -28,3 +28,4 @@ public class Child extends Parent {
     }
 
 }
+//Even though super() is not explicitly written in Child(String s), Java implicitly calls the default constructor of Parent when there is no explicit super() call.

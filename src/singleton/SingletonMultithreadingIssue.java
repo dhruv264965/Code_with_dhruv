@@ -7,7 +7,7 @@ class Singletonn {
     }
 //Both Thread 1 and Thread 2 check if (instance == null) simultaneously.
 //Since instance is null for both threads at the same time, they both proceed to create separate instances of the singleton.
-//    public static Singletonn getInstance() { // we are getting two different hascode with same instance
+//    public static Singletonn getInstance() { // we are getting two different hashcode with same instance
 //        if (instance == null) { // Thread 1 checks
 //            try {
 //                Thread.sleep(100); // Simulating some delay
