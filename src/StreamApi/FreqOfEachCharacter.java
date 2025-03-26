@@ -10,7 +10,7 @@ public class FreqOfEachCharacter {
     public static void main(String[] args) {
         String str="Dhruv Shukla";
         Map<String, Long> collect = Arrays.stream(str.toLowerCase().split("")) //Groups the characters by their identity (Function.identity()).
-                .filter(ch->!ch.isBlank()) //exclude white space
+              //  .filter(ch->!ch.isBlank()) //exclude white space
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting())); //Function.identity mai jo hum denge wahi return  kar dega
         System.out.println(collect);
       // sort character by freqency

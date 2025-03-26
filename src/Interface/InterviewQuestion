@@ -1,3 +1,5 @@
+Interface- An interface is a contract that defines what a class should do but does not provide any
+implementation.
 Q->If two interfaces have the same default method and a class implements both, how does the JVM know which method to execute?
 Answer-When a class implements two interfaces that have default methods with the same name and signature, the JVM cannot decide which
       default method to use because of ambiguity. This results in a compilation error. However, you can resolve this ambiguity by
