@@ -33,6 +33,16 @@ public class FreqOfEachWord {
         System.out.println(returnDuplicate);
         returnDuplicate.forEach((word)-> System.out.println(word.getKey()+""));
 
+        System.out.println("return whose length is more than 3");
+        List<Map.Entry<String, Integer>> wordlengthMoreThanThree = Arrays.stream(str.toLowerCase().split(" "))
+                .map(word -> Map.entry(word, word.length()))
+                .filter(x -> x.getValue() > 3)
+                .collect(Collectors.toList());
+        System.out.println(wordlengthMoreThanThree);
+        System.out.println("---------------------------------------------------");
 
+        Map<String, Long> collect = Arrays.stream(str.toLowerCase().split("\\s+"))
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        System.out.println(collect);
     }
 }
