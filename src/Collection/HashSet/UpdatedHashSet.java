@@ -16,11 +16,23 @@ class Student {
         this.id = id;
 
     }
+//    @Override   If this is wriiten then it show duplicate value
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (!(o instanceof Student)) return false;
+//        Student s = (Student) o;
+//        return this.id == s.id && this.name.equals(s.name);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id, name);
+//    }
 
 
-    public boolean equals(Object o) {
+    public boolean equals(Object o) {  // equals method is writteen as based on ID only not name that by it is allowing in this condion
 
-        if (o instanceof Student) {
+        if (o instanceof Student) {    // if equals method is written based on name and ID then namit will be taken as duplicate
 
             Student s = (Student) o;
 
@@ -31,12 +43,12 @@ class Student {
         return false;
 
     }
-//
-//    public int hashCode() {
-//
-//        return this.id;
-//
-//    }
+
+    public int hashCode() {
+
+        return this.id;
+
+    }
 
     public String toString() {
 
