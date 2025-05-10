@@ -12,11 +12,13 @@ ans->1. stream()
            Bob processed by main
            Charlie processed by main
 2. parallelStream()
-Definition: A parallel stream that divides the data into multiple chunks and processes them in parallel using the Fork/Join framework.
+Definition: A parallel stream that divides the data into multiple chunks and processes them in parallel using
+            the Fork/Join framework.
 Execution: Tasks are distributed across multiple threads (from the common ForkJoinPool).
 Threading: Utilizes multiple threads to process elements concurrently.
 Use Case: Best suited for large datasets or computationally intensive tasks where parallelism can improve performance.
-Performance: Can be faster than stream() for large datasets but involves overhead for thread management. Performance may degrade for small datasets due to parallelization overhead.
+Performance: Can be faster than stream() for large datasets but involves overhead for thread management.
+              Performance may degrade for small datasets due to parallelization overhead.
 Order: May not maintain encounter order unless explicitly specified.
 List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
 names.parallelStream()

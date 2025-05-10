@@ -26,5 +26,7 @@ public class StreamDemo {
         Stream<Integer> generate = Stream.generate(() -> 1);
         List<Integer> limit = Stream.iterate(1, x -> x + 1).limit(100).collect(Collectors.toList());
         System.out.println(limit);
+
+        // 5 .
     }
 }

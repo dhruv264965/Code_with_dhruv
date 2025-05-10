@@ -3,9 +3,6 @@ Example: Employee ↔ Address (One Employee has One Address)
 Each Employee has one Address.
 
 Entity Definitions
-java
-Copy
-Edit
 @Entity
 public class Employee {
     @Id
@@ -17,9 +14,7 @@ public class Employee {
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 }
-java
-Copy
-Edit
+
 @Entity
 public class Address {
     @Id
@@ -30,9 +25,7 @@ public class Address {
 }
 CRUD Operations
 Save an Employee with Address
-java
-Copy
-Edit
+
 Employee employee = new Employee();
 employee.setName("John Doe");
 
@@ -43,9 +36,7 @@ address.setCountry("USA");
 employee.setAddress(address);
 employeeRepository.save(employee);
 Fetch Employee with Address
-java
-Copy
-Edit
+
 Employee emp = employeeRepository.findById(1L).get();
 System.out.println(emp.getAddress().getCity());
 ✔ cascade = CascadeType.ALL → Automatically saves the Address when saving an Employee.
@@ -56,9 +47,7 @@ Example: One Department has Many Employees
 Each Department has multiple Employees.
 
 Entity Definitions
-java
-Copy
-Edit
+
 @Entity
 public class Department {
     @Id
@@ -69,9 +58,7 @@ public class Department {
     @OneToMany(mappedBy = "department", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Employee> employees = new ArrayList<>();
 }
-java
-Copy
-Edit
+
 @Entity
 public class Employee {
     @Id
@@ -85,9 +72,7 @@ public class Employee {
 }
 CRUD Operations
 Save Department with Employees
-java
-Copy
-Edit
+
 Department department = new Department();
 department.setName("IT");
 
@@ -103,9 +88,7 @@ department.setEmployees(List.of(emp1, emp2));
 
 departmentRepository.save(department);
 Fetch Department with Employees
-java
-Copy
-Edit
+
 Department dept = departmentRepository.findById(1L).get();
 System.out.println(dept.getEmployees().size()); // Prints number of employees
 ✔ mappedBy = "department" → Prevents unnecessary join table creation.
@@ -117,9 +100,7 @@ Example: Students and Courses (Many Students enroll in Many Courses)
 Each Student can enroll in many Courses, and each Course can have many Students.
 
 Entity Definitions
-java
-Copy
-Edit
+
 @Entity
 public class Student {
     @Id
@@ -135,9 +116,7 @@ public class Student {
     )
     private List<Course> courses = new ArrayList<>();
 }
-java
-Copy
-Edit
+
 @Entity
 public class Course {
     @Id
@@ -150,9 +129,7 @@ public class Course {
 }
 CRUD Operations
 Save Students and Courses
-java
-Copy
-Edit
+
 Student student1 = new Student();
 student1.setName("Alice");
 
@@ -177,9 +154,7 @@ course2.getStudents().add(student1);
 studentRepository.save(student1);
 studentRepository.save(student2);
 Fetch Student with Courses
-java
-Copy
-Edit
+
 Student student = studentRepository.findById(1L).get();
 System.out.println(student.getCourses().size());
 ✔ @JoinTable → Creates a join table (student_course).

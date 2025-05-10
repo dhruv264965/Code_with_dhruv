@@ -10,6 +10,7 @@ public class ArrayListDemo {
         l.add(3);
         l.add(51);
         l.add(56);
+        l.add(5);
         System.out.println(l);
         l.sort(Comparator.reverseOrder());
         System.out.println(l);

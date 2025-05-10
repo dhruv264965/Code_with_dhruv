@@ -7,6 +7,28 @@ public class String_intern {
         String s6=new String("Dhruv");
         String s3="Dhruv";
         System.out.println(s1);
+        System.out.println(s1==s2);  //false
+        System.out.println(s2==s6);  //true
+        System.out.println(s1.equals(s2));// false
+        System.out.println(s6.equals(s3));//false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         System.out.println(" }"+s2==s6);
         System.out.println(s1==s3);////true
         System.out.println(s1==s2);   /// false
@@ -40,25 +62,19 @@ public class String_intern {
 //3. Memory Allocation in Your Code
 //Let's analyze line-by-line how memory is allocated:
 //
-//java
-//Copy
-//Edit
+
 //String s1 = "Dhruv";  // (1)
 //String s2 = new String("Dhruv"); // (2)
 //String s6 = new String("Dhruv"); // (3)
 //String s3 = "Dhruv";  // (4)
 //Step 1: Creating s1 and s3
-//java
-//Copy
-//Edit
+
 //String s1 = "Dhruv";
 //String s3 = "Dhruv";
 //✅ Stored in the String Pool (Only one copy is created).
 //✅ Both s1 and s3 refer to the same object in the String Pool.
 //
-//arduino
-//Copy
-//Edit
+
 //String Pool:
 // ┌────────────────┐
 // |   "Dhruv"      | ← s1, s3
@@ -66,17 +82,13 @@ public class String_intern {
 //👉 s1 == s3 returns true because they point to the same memory location in the String Pool.
 //
 //Step 2: Creating s2 and s6
-//java
-//Copy
-//Edit
+
 //String s2 = new String("Dhruv");
 //String s6 = new String("Dhruv");
 //✅ Stored in the Heap Memory (Separate objects).
 //✅ Even though "Dhruv" already exists in the String Pool, new String("Dhruv") forces a new object to be created in Heap.
 //
-//nginx
-//Copy
-//Edit
+
 //Heap Memory:
 // ┌────────────────┐
 // |   "Dhruv"      | ← s2
@@ -86,9 +98,7 @@ public class String_intern {
 //👉 s2 == s6 returns false because they are two different objects in Heap Memory.
 //
 //Step 3: Using intern()
-//java
-//Copy
-//Edit
+
 //String s4 = s1.intern();
 //✅ s1 is already in the String Pool, so s4 will point to the same object.
 //
@@ -99,9 +109,7 @@ public class String_intern {
 //✅ s2 is stored in the Heap.
 //✅ intern() checks if "Dhruv" already exists in the String Pool. Since it does, s5 will point to that pool object.
 //
-//arduino
-//Copy
-//Edit
+
 //String Pool:
 // ┌────────────────┐
 // |   "Dhruv"      | ← s1, s3, s4, s5
