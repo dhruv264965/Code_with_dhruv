@@ -12,7 +12,7 @@ public class TerminalOperation {
         List<Integer> list= Arrays.asList(1,2,3,4);
         // 1. collect
         System.out.println("Collect");
-        List<Integer> collect = list.stream().skip(1).collect(Collectors.toList());
+        List<Integer> collect = list.stream().collect(Collectors.toList());
         List<Integer> collect1 = list.stream().skip(1).toList();
         System.out.println(collect);
         System.out.println(collect1);

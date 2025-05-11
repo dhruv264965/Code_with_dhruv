@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 public class MethodReferneceExample {
     public static void main(String[] args) {
         List<String> student = Arrays.asList("dhruv", "shukla", "ankit");
-        student.forEach(x-> System.out.println(x));
+        //student.forEach(x-> System.out.println(x));
         student.forEach(System.out::println);  // method reference
 
        //Constructor reference
@@ -23,6 +23,14 @@ class MobilePhone{
     String name;
 
     public MobilePhone(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
     }
 
