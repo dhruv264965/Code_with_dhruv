@@ -9,9 +9,7 @@ Use pagination with Pageable to fetch data in chunks.
 
 📌 Example: Paginated API
 Controller
-java
-Copy
-Edit
+
 @GetMapping
 public ResponseEntity<Page<EmployeeDTO>> getAllEmployees(
     @RequestParam(defaultValue = "0") int page,
@@ -36,18 +34,14 @@ Use DTOs (Data Transfer Objects) to send only required fields.
 
 📌 Example: DTO Conversion
 DTO Class
-java
-Copy
-Edit
+
 @Data
 public class EmployeeDTO {
     private String name;
     private double salary;
 }
 Convert Entity to DTO
-java
-Copy
-Edit
+
 public EmployeeDTO toDTO(Employee employee) {
     return new EmployeeDTO(employee.getName(), employee.getSalary());
 }
@@ -61,9 +55,7 @@ For large datasets, queries should be optimized using indexes.
 Use indexes for frequently queried fields.
 
 📌 Example: Adding Index
-java
-Copy
-Edit
+
 @Entity
 @Table(name = "employees", indexes = {
     @Index(name = "idx_employee_name", columnList = "name"),
@@ -91,9 +83,7 @@ Fetching all records without limiting results.
 Use @Query with LIMIT to retrieve only the required number of records.
 
 📌 Example: Fetching Top 10 Employees by Salary
-java
-Copy
-Edit
+
 @Query("SELECT e FROM Employee e ORDER BY e.salary DESC")
 List<Employee> findTop10HighestSalaries(Pageable pageable);
 ✔ Reduces database load
@@ -107,9 +97,7 @@ Using EAGER fetching loads unnecessary related entities.
 Use LAZY loading for OneToMany, ManyToMany relationships.
 
 📌 Example: Lazy Loading
-java
-Copy
-Edit
+
 @Entity
 public class Department {
     @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
@@ -126,17 +114,13 @@ Use Spring Cache or Redis for caching.
 
 📌 Example: Using Spring Cache
 Enable Caching
-java
-Copy
-Edit
+
 @EnableCaching
 @SpringBootApplication
 public class EmployeeApplication {
 }
 Cache API Responses
-java
-Copy
-Edit
+
 @Cacheable(value = "employees", key = "#id")
 public EmployeeDTO getEmployeeById(Long id) {
     return employeeRepository.findById(id).map(this::toDTO).orElse(null);
@@ -151,9 +135,7 @@ If your API handles bulk inserts or updates, avoid single row operations.
 Use Spring Data JPA saveAll() or JDBC Batch Processing.
 
 📌 Example: Bulk Insert Using saveAll()
-java
-Copy
-Edit
+
 public List<Employee> saveEmployees(List<Employee> employees) {
     return employeeRepository.saveAll(employees);
 }
@@ -164,9 +146,7 @@ public List<Employee> saveEmployees(List<Employee> employees) {
 For dynamic filtering + complex queries, use JpaSpecificationExecutor.
 
 📌 Example: Filtering Employees with Dynamic Criteria
-java
-Copy
-Edit
+\
 public class EmployeeSpecification {
     public static Specification<Employee> hasSalaryGreaterThan(double salary) {
         return (root, query, cb) -> cb.greaterThan(root.get("salary"), salary);
