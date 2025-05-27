@@ -62,7 +62,7 @@ public class HowManyMaleAndFemalInOrg {
                 .collect(Collectors.groupingBy(Employee::getGender, Collectors.counting()));
         System.out.println("Male and Female in the organization:-"+getGenderCount);
 //        System.out.println("Male Employess "+getGenderCount.get("Male"));
-//        System.out.println("female Employess "+getGenderCount.get("Female"));
+        System.out.println("female Employess "+getGenderCount.get("Female"));
 
         System.out.println("----------------------------------------------------------------");
         // Total number of Employee has Age more than 30
@@ -79,7 +79,7 @@ public class HowManyMaleAndFemalInOrg {
         System.out.println("Employee count salary more than 30000:- " +salaryCount);
 
         System.out.println("---------------------------------------------------------------------");
-        // print male name whose salary is 30000
+        // print male name whose salary is greater 30000
     //Approch 1->
      employees.stream()
                 .filter(employee -> employee.getGender().equals("Male") && employee.getSalary()>30000)
@@ -113,6 +113,7 @@ public class HowManyMaleAndFemalInOrg {
 
         System.out.println("-------------------------------------------------------------");
         // find employee with Highest salary
+        System.out.println("Highest salary ");
         Optional<Employee>highestSalary=employees.stream()
                 .max(Comparator.comparingDouble(Employee::getSalary));
         highestSalary.ifPresentOrElse(employee -> System.out.println("Name "+employee.getName()+"  salary "+employee.getSalary()),()-> System.out.println("Not found"));
