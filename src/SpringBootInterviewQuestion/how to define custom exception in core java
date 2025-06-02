@@ -1,11 +1,9 @@
-n core Java, you can define a custom exception by extending either Exception (for checked exceptions) or RuntimeException (for unchecked exceptions).
+In core Java, you can define a custom exception by extending either Exception (for checked exceptions) or RuntimeException (for unchecked exceptions).
 
 1. Checked Exception (Extends Exception)
 Checked exceptions must be either handled using try-catch or declared using throws.
 
-java
-Copy
-Edit
+
 // Custom checked exception
 class CustomCheckedException extends Exception {
     public CustomCheckedException(String message) {
@@ -31,9 +29,7 @@ public class Main {
 2. Unchecked Exception (Extends RuntimeException)
 Unchecked exceptions don't need explicit handling and can propagate automatically.
 
-java
-Copy
-Edit
+
 // Custom unchecked exception
 class CustomUncheckedException extends RuntimeException {
     public CustomUncheckedException(String message) {

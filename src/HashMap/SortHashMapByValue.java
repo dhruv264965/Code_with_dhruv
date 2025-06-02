@@ -36,6 +36,7 @@ public class SortHashMapByValue {
         System.out.println("SORT MAP BY VALUE with java stream");
         LinkedHashMap<String, Integer> sortedMapByValue = mp.entrySet()
                 .stream()
+
                 .sorted(Map.Entry.comparingByValue())
 //                .sorted(Map.Entry.<String, Integer>comparingByValue().reversed()) // if we want in reverse order
                 .collect(Collectors.toMap(Map.Entry::getKey,
