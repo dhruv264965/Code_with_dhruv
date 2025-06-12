@@ -6,9 +6,7 @@ Question-supoose in microservics project if we want validation in some of the ap
  Use HandlerInterceptor to conditionally check for email verification.
 
  1. Create Interceptor
- java
- Copy
- Edit
+
  @Component
  public class EmailVerificationInterceptor implements HandlerInterceptor {
 
@@ -47,9 +45,7 @@ Question-supoose in microservics project if we want validation in some of the ap
  }
  ✅ Option 2: Custom Annotation + AOP (Better control)
  1. Create Custom Annotation
- java
- Copy
- Edit
+
  @Target({ElementType.METHOD})
  @Retention(RetentionPolicy.RUNTIME)
  public @interface RequireEmailVerified {
