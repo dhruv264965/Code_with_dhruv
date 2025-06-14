@@ -9,9 +9,6 @@ When to Use the Builder Pattern?
 
 Imagine a User class with multiple attributes:
 
-java
-Copy
-Edit
 class User {
     private String name;
     private int age;
