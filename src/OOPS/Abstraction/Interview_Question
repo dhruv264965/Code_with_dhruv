@@ -1,3 +1,4 @@
+
 An abstract class is a class that is declared with an abstract keyword.
 An abstract method is a method that is declared without implementation.
 An abstract class may or may not have all abstract methods. Some of them can be concrete methods

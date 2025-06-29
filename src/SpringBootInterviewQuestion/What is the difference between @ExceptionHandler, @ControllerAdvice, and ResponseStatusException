@@ -2,9 +2,7 @@
 The @ExceptionHandler annotation is used to handle exceptions within a specific controller.
 
 Example: Using @ExceptionHandler in a Controller
-java
-Copy
-Edit
+
 @RestController
 @RequestMapping("/employees")
 public class EmployeeController {
@@ -33,9 +31,7 @@ Key Features of @ExceptionHandler
 The @ControllerAdvice annotation is used for global exception handling across multiple controllers.
 
 Example: Global Exception Handling with @ControllerAdvice
-java
-Copy
-Edit
+
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 

@@ -23,9 +23,11 @@ public class MajorityElement {
         System.out.println(map);
         // sort
         List<Map.Entry<Integer,Integer>>sorted=new ArrayList<>(map.entrySet());
-        sorted.sort((a,b)->a.getValue().compareTo(b.getValue()));
+        sorted.sort((a,b)->b.getValue().compareTo(a.getValue()));
         System.out.println(sorted);
-        if(sorted.size()>0){
+        if(!sorted.isEmpty()){
+            System.out.println(sorted.get(0).getKey());
+            System.out.println(sorted.get(1).getKey());
             System.out.println(sorted.get(sorted.size()-1).getKey());
         }
     }

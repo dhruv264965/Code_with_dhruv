@@ -1,4 +1,5 @@
-When dealing with a large dataset, optimizing your Spring Boot CRUD API is crucial for performance, scalability, and efficiency. Below are the best practices to optimize your API.
+When dealing with a large dataset, optimizing your Spring Boot CRUD API is crucial for performance,
+scalability, and efficiency. Below are the best practices to optimize your API.
 
 1️⃣ Use Pagination & Sorting (Avoid Fetching All Data)
 ❌ Bad Practice:

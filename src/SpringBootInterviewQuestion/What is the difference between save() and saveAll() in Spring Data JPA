@@ -1,4 +1,5 @@
-Both save() and saveAll() are methods provided by Spring Data JPA's JpaRepository to persist data in a database, but they have key differences in how they handle transactions, performance, and usage.
+Both save() and saveAll() are methods provided by Spring Data JPA's JpaRepository to persist data in a
+database, but they have key differences in how they handle transactions, performance, and usage.
 
 1️⃣ save() – Saves a Single Entity
 The save() method is used to persist or update a single entity in the database.

@@ -12,7 +12,8 @@ Key Features of Jackson:
     <artifactId>jackson-databind</artifactId>
     <version>2.15.0</version>  <!-- Use latest version -->
 </dependency>
-jackson-databind includes both jackson-core (basic JSON processing) and jackson-annotations (for handling JSON mapping
+jackson-databind includes both jackson-core (basic JSON processing) and jackson-annotations (for handling
+JSON mapping
 with annotations).
 
 Convert Java Object to JSON (serialization)

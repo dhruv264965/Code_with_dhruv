@@ -26,8 +26,8 @@ public class thirdMostFreqElemInArray {
 //        System.out.println(sort);
 
         // 3rd largest freq element
-        if(sortedEntries.size()>3){
-            System.out.println(sortedEntries.get(0).getKey());
+        if(!sortedEntries.isEmpty()){
+            System.out.println(sortedEntries.get(2).getKey());
         }
         else {
             System.out.println("Not enough distinct elements for a 3rd most frequent element.");

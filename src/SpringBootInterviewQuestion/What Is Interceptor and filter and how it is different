@@ -1,5 +1,6 @@
 One Line Dif-Intercept HTTP request and response before reaching to controller
-Interceptor-Allows you to intercept incoming requests or outgoing responses before or after they are handled by a controller.
+Interceptor-Allows you to intercept incoming requests or outgoing responses before or after they are handled by
+a controller.
   You can use the Interceptor in Spring Boot to perform operations under the following situations −
                1.  Before sending the request to the controller
                2.  Before sending the response to the client
@@ -8,7 +9,8 @@ add the response header before sending the response to the client.
 
 step1- interceptor mai work karne ke liye in controoler class mai We need to implement HandlerInterceptor interface.
 step2- It consists of 3 method and thses 3 method we need to overrride
-        1.preHandle() method − Used before sending the the request to the controler. It return boolean true and fasle
+        1.preHandle() method − Used before sending the the request to the controler. It return boolean true and
+        fasle
         2.postHandle() method-Used before sending the response to the client.
         3.afterCompletion() method-Used After the completing the request and response
    example- @Component
@@ -86,7 +88,8 @@ Controller method executes → returns "Hello World!"
 Interceptor postHandle() and afterCompletion() (if implemented) run
 Response sent to the client
 
-Senario ----if we not add .addPathPatterns("/api/**");  api call only with /hello so can we get output for preHandle() method
+Senario ----if we not add .addPathPatterns("/api/**");  api call only with /hello so can we get output
+for preHandle() method
 
 
 You created an interceptor, but did not use:
@@ -117,8 +120,9 @@ Because /hello does not match the pattern /api/**
 
 -----------------------------------------------------------------------
 One line Def-It intercept the HTTP request and response before sending the servlet( Dispacher servlet)
-Filter- A Filter is part of the Servlet API and works at the Servlet container level. It is used to perform filtering
-tasks on incoming requests and outgoing responses before they reach the servlet (including Spring's DispatcherServlet).
+Filter- A Filter is part of the Servlet API and works at the Servlet container level. It is used to perform
+filtering tasks on incoming requests and outgoing responses before they reach the servlet (including Spring's
+DispatcherServlet).
    Common uses:
        Logging requests/responses
        Authentication/authorization

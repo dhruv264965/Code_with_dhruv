@@ -1,8 +1,13 @@
-@Version annotation is used to specify the version number for a specific entity. Version Number provided using @Version annotation
-is used to prevent concurrent modification to an entity. When an entity is being updated, the version number is also incremented.
-If another transaction tries to update the same entity with the older version number, an exception will be given. The version number
-helps to prevent conflicts between concurrent transactions. @Version annotation is used for optimistic locking. Optimistic locking is
-a concurrency control mechanism in which it ensures that concurrent transactions will not conflict with each other. If there is a chance
+@Version annotation is used to specify the version number for a specific entity. Version Number provided
+using @Version annotation
+is used to prevent concurrent modification to an entity. When an entity is being updated, the version number
+is also incremented.
+If another transaction tries to update the same entity with the older version number, an exception will be given.
+The version number
+helps to prevent conflicts between concurrent transactions. @Version annotation is used for optimistic locking.
+ Optimistic locking is
+a concurrency control mechanism in which it ensures that concurrent transactions will not conflict with each
+other. If there is a chance
 of conflict during transactions the transaction having an older version number will be aborted
 code- package com.example.java_test_application;
 

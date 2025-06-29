@@ -1,5 +1,6 @@
 Handling Validation in Spring Boot (Create/Update Operations)
-Spring Boot provides Spring Validation (javax.validation / jakarta.validation) to enforce rules on incoming data while creating or updating an entity.
+Spring Boot provides Spring Validation (javax.validation / jakarta.validation) to enforce rules on incoming
+data while creating or updating an entity.
 
 Step 1: Add Validation Annotations in Entity
 Modify the Employee entity with validation constraints using jakarta.validation.constraints:

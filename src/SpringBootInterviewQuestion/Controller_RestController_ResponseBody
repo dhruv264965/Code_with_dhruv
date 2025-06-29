@@ -1,7 +1,8 @@
     1. @Controller
 Purpose
 Used to define a controller in a Spring MVC application for handling web requests.
-Typically used for web applications that return HTML views (server-side rendered pages) or other response types like files.
+Typically used for web applications that return HTML views (server-side rendered pages) or other response types
+ like files.
 Key Characteristics
 Relies on ViewResolver (like Thymeleaf, JSP, etc.) to resolve and render the view.
 Methods typically return a view name (a string) that is resolved to a physical view (like an HTML or JSP file).
@@ -22,7 +23,8 @@ Purpose
 Specialized version of @Controller for building RESTful web services.
 Combines @Controller and @ResponseBody.
 Key Characteristics
-The response is serialized directly to the HTTP response body (e.g., as JSON, XML, or plain text) instead of rendering a view.
+The response is serialized directly to the HTTP response body (e.g., as JSON, XML, or plain text) instead of
+rendering a view.
 Eliminates the need to annotate each method with @ResponseBody.
 @RestController
 public class ApiController {

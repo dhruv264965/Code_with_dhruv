@@ -1,13 +1,13 @@
 Feature	Iterator	ListIterator
-Applicable for	All Collection types (List, Set, Queue, etc.)	Only for List implementations (ArrayList, LinkedList, etc.)
+Applicable for	All Collection types (List, Set, Queue, etc.)	Only for List implementations (ArrayList,
+LinkedList, etc.)
 Traversal Direction	Only forward (next())	Both forward (next()) and backward (previous())
-Modification	Can only remove elements (remove())	Can remove (remove()), add (add()), and update (set()) elements
+Modification	Can only remove elements (remove())	Can remove (remove()), add (add()), and update (set())
+elements
 Index Access	No direct access to indices	Provides index access using nextIndex() and previousIndex()
 Usability	Works with any collection	Works only with lists
 Example of Iterator
-java
-Copy
-Edit
+
 import java.util.*;
 
 public class IteratorExample {
@@ -24,9 +24,7 @@ public class IteratorExample {
     }
 }
 Example of ListIterator
-java
-Copy
-Edit
+
 import java.util.*;
 
 public class ListIteratorExample {
@@ -49,9 +47,7 @@ public class ListIteratorExample {
 }
 Output:
 
-less
-Copy
-Edit
+
 A
 B
 C

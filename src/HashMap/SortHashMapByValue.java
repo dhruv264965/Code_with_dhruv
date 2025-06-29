@@ -13,7 +13,45 @@ public class SortHashMapByValue {
         mp.put("B",90);
         mp.put("F",12);
         mp.put("G",22);
+        mp.put("G",22);
 
+        System.out.println(mp);
+        List<Map.Entry<String,Integer>>sortEntities=new ArrayList<>(mp.entrySet());
+        sortEntities.sort((a,b)->a.getValue().compareTo(b.getValue()));
+        System.out.println(" sort by value");
+        System.out.println(sortEntities);
+        if(!sortEntities.isEmpty()) {
+            for (int i = 0; i < sortEntities.size(); i++) {
+                System.out.print(sortEntities.get(i).getValue()+" ");
+            }
+        }
+        System.out.println("");
+        System.out.println("sort by value using stream");
+        List<Map.Entry<String, Integer>> collect = mp.entrySet().stream()
+                .sorted(Map.Entry.comparingByValue())
+                .collect(Collectors.toList());
+        System.out.println(collect);
+        collect.forEach(s-> System.out.print(s.getValue()+" "));
+        System.out.println(" ");
+        System.out.println("----------------------------------");
+        sortEntities.sort((a,b)->a.getKey().compareTo(b.getKey()));
+        System.out.println("");
+        System.out.println(" sort by key");
+        System.out.println(sortEntities);
+        if(!sortEntities.isEmpty()) {
+            for (int i = 0; i < sortEntities.size(); i++) {
+                System.out.print(sortEntities.get(i).getKey()+" ");
+            }
+        }
+        System.out.println("");
+        System.out.println("using stream sort by key ");
+        List<Map.Entry<String, Integer>> collect1 = mp.entrySet().stream()
+                .sorted(Map.Entry.comparingByKey())
+                .collect(Collectors.toList());
+        System.out.println(collect1);
+        collect1.forEach(s-> System.out.print(s.getKey()+" "));
+
+        System.out.println("");
         System.out.println("-------- SORT MAP BY VALUE--------------------------");
         //sort map in value without using java Stream
         System.out.println("SORT MAP BY VALUE without java stream");

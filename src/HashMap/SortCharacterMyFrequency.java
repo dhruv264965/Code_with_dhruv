@@ -18,13 +18,20 @@ public class SortCharacterMyFrequency {
         System.out.println(list);
 
         // Step 3: Print characters in sorted order by frequency
-        for (Map.Entry<Character, Integer> entry : list) {
-            char character = entry.getKey();
-            int frequency = entry.getValue();
-            for (int i = 0; i < frequency; i++) {
+        list.forEach(entry-> {
+            char character=entry.getKey();
+            int freq=entry.getValue();
+            for(int i=0;i<freq;i++){
                 result.append(character);
             }
-        }
+        });
+//        for (Map.Entry<Character, Integer> entry : list) {
+//            char character = entry.getKey();
+//            int frequency = entry.getValue();
+//            for (int i = 0; i < frequency; i++) {
+//                result.append(character);
+//            }
+//        }
         return result.toString();
     }
 

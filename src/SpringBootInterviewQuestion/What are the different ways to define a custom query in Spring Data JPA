@@ -1,4 +1,5 @@
-Spring Data JPA provides several ways to define custom queries beyond the default findBy method names. These include JPQL, Native SQL, @Query annotation, Named Queries, Criteria API, and Specification API.
+Spring Data JPA provides several ways to define custom queries beyond the default findBy method names.
+These include JPQL, Native SQL, @Query annotation, Named Queries, Criteria API, and Specification API.
 
 1️⃣ Using Method Names (Derived Queries)
 Spring Data JPA derives queries from method names automatically.

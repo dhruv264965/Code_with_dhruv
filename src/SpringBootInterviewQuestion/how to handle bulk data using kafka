@@ -113,7 +113,9 @@ Client ---> POST /users/bulk
                         |            |            |
                  Consumer1    Consumer2    Consumer3 (Parallel Processing)
 💬 How to Explain in Interview
-“Instead of processing bulk user data synchronously in the controller, I used Kafka as a messaging layer. Each user is serialized to JSON and pushed to a topic.
+“Instead of processing bulk user data synchronously in the controller, I used Kafka as a messaging layer.
+Each user is serialized to JSON and pushed to a topic.
 
-Background consumers (with @KafkaListener) read these messages and process them asynchronously. This decouples the API from the processing logic and improves system scalability and fault tolerance.”
+Background consumers (with @KafkaListener) read these messages and process them asynchronously.
+This decouples the API from the processing logic and improves system scalability and fault tolerance.”
 

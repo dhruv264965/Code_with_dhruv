@@ -1,5 +1,6 @@
 🔹 1. What is a Spring Profile?
-A Spring profile is a way to segregate configuration so that different beans or properties can be activated based on the current environment.
+A Spring profile is a way to segregate configuration so that different beans or properties can be activated
+based on the current environment.
 
 For example:
 Use an H2 database in dev profile.

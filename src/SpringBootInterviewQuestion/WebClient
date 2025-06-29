@@ -1,4 +1,5 @@
-"WebClient is a non-blocking, reactive HTTP client introduced in Spring WebFlux. It is used to make asynchronous API calls and handle responses efficiently."
+"WebClient is a non-blocking, reactive HTTP client introduced in Spring WebFlux. It is used to make
+asynchronous API calls and handle responses efficiently."
 
 💡 Why Use WebClient Instead of RestTemplate?
 

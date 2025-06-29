@@ -7,7 +7,7 @@ mysql-
 nosql-
 1->Use for unstractural data like list of product all product all different different properties
    then we use nosql
-2->Horizontal scaling if new Product come sowe can add
+2->Horizontal scaling if new Product come so we can add
 3->suitable for handling large volumes of data and scaling out across distributed systems.
 
 

@@ -54,7 +54,7 @@ public class HowManyMaleAndFemalInOrg {
                 new Employee(1, "Dhruv Shukla", 30, "Male", 50000),
                 new Employee(2, "Arti Shukla", 25, "Female", 20000),
                 new Employee(3, "Ashish Shukla", 40, "Male", 70000),
-                new Employee(4, "Vandana Shukla", 35, "Female", 30000),
+                new Employee(4, "Vandana Shukla", 35, "Female", 95000),
                 new Employee(5, "Amit Shukla", 50, "Male", 90000)
         );
         // How many Male and Female in the organization.
@@ -116,10 +116,25 @@ public class HowManyMaleAndFemalInOrg {
         System.out.println("Highest salary ");
         Optional<Employee>highestSalary=employees.stream()
                 .max(Comparator.comparingDouble(Employee::getSalary));
+        System.out.println(highestSalary.get());
         highestSalary.ifPresentOrElse(employee -> System.out.println("Name "+employee.getName()+"  salary "+employee.getSalary()),()-> System.out.println("Not found"));
+        System.out.println("-------------------------------------------------------------");
+        // find employee with Highest salary male and female employee
+        System.out.println("male and female employee Highest salary ");
+        Map<String, Optional<Employee>> collect = employees.stream()
+                .collect(Collectors.groupingBy(Employee::getGender, Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary))));
+        System.out.println(collect);
+        System.out.println("male employee Highest salary");
+        Optional<Employee> male = collect.get("Male");
+        System.out.println(male);
+        System.out.println("Female employee Highest salary");
+        Optional<Employee> Female = collect.get("Female");
+        System.out.println(Female);
+
 
         System.out.println("-------------------------------------------------------------------------------------");
         //Top Two highest paid employee
+        System.out.println("Top Two highest paid employee");
         List<Employee> topTwoHighestPaidEmployees = employees.stream()
                 .sorted(Comparator.comparingDouble(Employee::getSalary).reversed()) // Sort by salary in descending order
                 .limit(2) // Limit to top 2 employees
