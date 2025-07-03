@@ -36,12 +36,12 @@ LongestConsecutiveSequence {
         System.out.println(hp);
         int maxLength=0;
         for( int num:hp){
-            if(!hp.contains(num-1)){  // this condition check agar privios number contain hai then waha se hum start nh karenge
+            if(!hp.contains(num-1)){  // Check if num is the start of a sequence and this condition check agar privios number contain hai then waha se hum start nh karenge
                 // suppose 3 9 1 10 4 20 2 hai if we get checking for 3 and 2 is already in set then we will move to next element
                 // because hame list 1 se start karni nh 3 se hai. if we get the element then we count length of consecutive ele present in hashset
                 int currentNum=num;
-                int currentLength=0;
-                while (hp.contains(currentNum)){
+                int currentLength=1;
+                while (hp.contains(currentNum+1)){
                     currentNum++;
                     currentLength++;
                 }
@@ -51,8 +51,12 @@ LongestConsecutiveSequence {
         return maxLength;
     }
     public static void main(String[] args) {
-        int arr[]={3, 9, 1 ,10, 4 ,20 ,10,2};
+        int arr[]={3, 9, 1 ,10, 4 ,20 ,21,22,23,24,10,2};
         //System.out.println(countLongestConsecutiveSequenceBruteForce(arr));
         System.out.println(countLongestConsecutiveSequence(arr));
     }
 }
+//| Metric              | Complexity |
+//| ------------------- | ---------- |
+//| ⏱ Time Complexity   | O(n)       |
+//| 💾 Space Complexity | O(n)       |

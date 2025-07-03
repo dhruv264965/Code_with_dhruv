@@ -1,9 +1,7 @@
 package ARRAY;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+
 //Given an array of integers, some elements appear twice and others appear once. Find all the elements that appear twice in this array.
 //Solve it without extra space and in
 //O(n) time.
@@ -36,6 +34,28 @@ public class FindDuplicateInArray {
             }
         }
         return arrayList;
+    }
+    public boolean hasDuplicate(int[] nums) {
+        HashMap<Integer,Integer> hp=new HashMap<>();
+        for(int num:nums){
+            hp.put(num,hp.getOrDefault(num,0)+1);
+        }
+        for(Map.Entry<Integer,Integer>entry:new ArrayList<>(hp.entrySet())){
+            if(entry.getValue()>1){
+                return true;
+            }
+        }
+        return false;
+    }
+    public int findDuplicatee(int[] nums) {
+        HashSet<Integer> hp=new HashSet<>();
+        for(int num:nums){
+            if(hp.contains(num)){
+                return num;
+            }
+            hp.add(num);
+        }
+        return -1;
     }
     public static void main(String[] args) {
         int nums[]={4,3,2,7,8,2,3,1};   //Output: [2,3]
