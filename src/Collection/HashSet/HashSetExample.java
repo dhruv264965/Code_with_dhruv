@@ -10,6 +10,7 @@ public class HashSetExample {
         fruits.add(null);  // Adding null
         fruits.add("Orange");
         fruits.add("Mango");
+        fruits.add("Banana"); // Duplicate Banana, will be ignored
         fruits.add(null);   // Duplicate null, will be ignored
 
         System.out.println("HashSet: " + fruits);

@@ -9,7 +9,7 @@ public class SeparateMinorAndMajorInList {
     static class User{
         int id;
         String name;
-
+//Str="abcdea"; output=abcde
         public int getId() {
             return id;
         }
