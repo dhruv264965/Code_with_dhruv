@@ -57,10 +57,23 @@ public class FindDuplicateInArray {
         }
         return -1;
     }
+    public static List<Integer> findAllDuplicatesUsingHashSet(int[] nums) {
+        HashSet<Integer> seen = new HashSet<>();
+        HashSet<Integer> duplicates = new HashSet<>();
+
+        for (int num : nums) {
+            if (!seen.add(num)) { // if add returns false, it's already seen
+                duplicates.add(num);
+            }
+        }
+
+        return new ArrayList<>(duplicates); // return as a List
+    }
     public static void main(String[] args) {
         int nums[]={4,3,2,7,8,2,3,1};   //Output: [2,3]
-      //  findDuplicates(nums);
+        findDuplicates(nums);
         System.out.println(findDuplicate(nums));
+        System.out.println(FindDuplicateInArray.findAllDuplicatesUsingHashSet(nums));
 
     }
 }

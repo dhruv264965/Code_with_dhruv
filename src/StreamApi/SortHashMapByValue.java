@@ -19,7 +19,7 @@ public class SortHashMapByValue {
                 .sorted(Map.Entry.<String,Integer>comparingByValue().reversed())
                 .collect(Collectors.toMap( Map.Entry::getKey,
                         Map.Entry::getValue,
-                        (e1, e2) -> e1,
+                        (existing, rep) -> existing,
                         LinkedHashMap::new ));
         System.out.println(sortedMap);
     }

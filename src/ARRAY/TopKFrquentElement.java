@@ -11,6 +11,7 @@ public class TopKFrquentElement {
         }
         List<Map.Entry<Integer,Integer>>sorted=new ArrayList<>(hp.entrySet());
         sorted.sort((a,b)->b.getValue().compareTo(a.getValue()));
+
         int result[]=new int[k];
         for(int i=0;i<k;i++){
             result[i]=sorted.get(i).getKey();

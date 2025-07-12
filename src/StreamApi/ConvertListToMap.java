@@ -49,7 +49,7 @@ public class ConvertListToMap {
         Map<String, String> collect = list.stream()
                 .collect(Collectors.toMap(User::getUsername,
                                          User::getPassword,
-                        (existing,duplicate)->existing
+                        (existing,duplicate)->duplicate
                                       ));
         System.out.println(collect);
 

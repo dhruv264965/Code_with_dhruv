@@ -11,29 +11,63 @@ class Employee {
     private int age;
     private String gender;
     private double salary;
+    private String department;
 
-    public Employee(int id, String name, int age, String gender, double salary) {
+    public Employee(int id, String name, int age, String gender, double salary, String department) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.gender = gender;
         this.salary = salary;
+        this.department = department;
     }
 
-    public String getGender() {
-        return gender;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getAge() {
         return age;
     }
 
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
     public double getSalary() {
         return salary;
     }
 
-    public String getName() {
-        return name;
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
     }
 
     @Override
@@ -44,6 +78,7 @@ class Employee {
                 ", age=" + age +
                 ", gender='" + gender + '\'' +
                 ", salary=" + salary +
+                ", department='" + department + '\'' +
                 '}';
     }
 }
@@ -51,26 +86,58 @@ class Employee {
 public class HowManyMaleAndFemalInOrg {
     public static void main(String[] args) {
         List<Employee> employees = Arrays.asList(
-                new Employee(1, "Dhruv Shukla", 30, "Male", 50000),
-                new Employee(2, "Arti Shukla", 25, "Female", 20000),
-                new Employee(3, "Ashish Shukla", 40, "Male", 70000),
-                new Employee(4, "Vandana Shukla", 35, "Female", 95000),
-                new Employee(5, "Amit Shukla", 50, "Male", 90000)
+                new Employee(1, "Dhruv Shukla", 20, "Male", 50000,"IT"),
+                new Employee(2, "Arti Shukla", 25, "Female", 20000,"CSE"),
+                new Employee(3, "Ashish Shukla", 40, "Male", 70000,"EC"),
+                new Employee(4, "Vandana Shukla", 35, "Female", 95000,"Mech"),
+                new Employee(5, "Amit Shukla", 50, "Male", 90000,"CSE")
         );
+        //What is the average and total salary in the organization
+        System.out.println("What is the average and total salary in the organization");
+        String collect3 = employees.stream()
+                .collect(Collectors.teeing(
+                        Collectors.summarizingDouble(Employee::getSalary),
+                        Collectors.averagingDouble(Employee::getSalary),
+                        (avg, total) -> avg + " " + total)
+                );
+        System.out.println(collect3);
+
+        System.out.println("----------------------------------------------------------------");
         // How many Male and Female in the organization.
         Map<String, Long> getGenderCount = employees.stream()
                 .collect(Collectors.groupingBy(Employee::getGender, Collectors.counting()));
         System.out.println("Male and Female in the organization:-"+getGenderCount);
 //        System.out.println("Male Employess "+getGenderCount.get("Male"));
         System.out.println("female Employess "+getGenderCount.get("Female"));
-
+        System.out.println("----------------------------------------------------------------");
+        System.out.println("print name of all department in this organization");
+        //print name of all department in this organization
+        employees.stream()
+                        .map(Employee::getDepartment)
+                .distinct()
+                .forEach(name->System.out.print(name+" "));
+        System.out.println("-------------------------------------------------------------------------------------------");
+        //Print average age of male and female employee
+        System.out.println("Print average age of male and female employee");
+        Map<String, Double> averageAgeOfMaleAndFemale = employees.stream()
+                .collect(Collectors.groupingBy(Employee::getGender, Collectors.averagingInt(Employee::getAge)));
+        System.out.println(averageAgeOfMaleAndFemale);
         System.out.println("----------------------------------------------------------------");
         // Total number of Employee has Age more than 30
         long countEmployee=  employees.stream()
                 .filter(employee -> employee.getAge()>30)
                 .count();   ///count method is long type
         System.out.println("Employee has Age more than 30 Age "+countEmployee);
-
+        System.out.println("----------------------------------------------------------------");
+// seprate the employee who has younger age less than 25 and older age more than 25
+        System.out.println("employee who has younger age less than 25 and older age more than 25");
+        Map<Boolean, List<Employee>> collect4 = employees.stream()
+                .collect(Collectors.partitioningBy(emp -> emp.getAge() > 25));
+        System.out.println(collect4);
+        System.out.println(collect4.get(true));
+        System.out.println(collect4.get(false));
+//        List<Employee> aTrue = collect4.get("true");
+//        System.out.println(aTrue);
         System.out.println("----------------------------------------------------------------------");
         // print Salary more than 30000
         long salaryCount=employees.stream()
@@ -114,10 +181,29 @@ public class HowManyMaleAndFemalInOrg {
         System.out.println("-------------------------------------------------------------");
         // find employee with Highest salary
         System.out.println("Highest salary ");
+        //appraoach 1
         Optional<Employee>highestSalary=employees.stream()
                 .max(Comparator.comparingDouble(Employee::getSalary));
         System.out.println(highestSalary.get());
         highestSalary.ifPresentOrElse(employee -> System.out.println("Name "+employee.getName()+"  salary "+employee.getSalary()),()-> System.out.println("Not found"));
+        // approach 2
+        Optional<Employee> collect1 = employees.stream()
+                .collect(Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary)));
+        if(collect1.isPresent()){
+            System.out.println("highest salary "+collect1.get());
+        }
+        System.out.println("-------------------------------------------------------------");
+        // find the employee name group by department id
+        System.out.println("find the employee name group by department id");
+        Map<String, List<Employee>> collect2 = employees.stream()
+                .collect(Collectors.groupingBy(Employee::getDepartment));
+        System.out.println(collect2);
+        System.out.println("-------------------------------------------------------------");
+        //average salary of each department
+        System.out.println("average salary of each department");
+        Map<String, Double> averageSalaryOfEachDept = employees.stream()
+                .collect(Collectors.groupingBy(Employee::getDepartment, Collectors.averagingDouble(Employee::getSalary)));
+        System.out.println(averageSalaryOfEachDept);
         System.out.println("-------------------------------------------------------------");
         // find employee with Highest salary male and female employee
         System.out.println("male and female employee Highest salary ");

@@ -67,14 +67,24 @@ public class ImportantQuestionBeforeInterview {
                 .skip(1)
                 .findFirst();
         System.out.println(secondHighest.get());
+        //9. Write a program to find nth smallest number
+        int arr1[]={3,6,4,2,7,9,9,1};
+        int n=3;
+        Optional<Integer> nthSmallest = Arrays.stream(arr1)
+                .boxed()
+                .sorted()
+                .distinct()
+                .skip(n-1)
+                .findFirst();
+        System.out.println(nthSmallest.get());
 
-        //9. Longest String in an array of String
+        //10. Longest String in an array of String
         String str6="java is popular";
         Optional<String> maxLengthWord = Arrays.stream(str6.split(" "))
                 .max(Comparator.comparingInt(String::length));
         System.out.println(maxLengthWord.get());
 
-        //10. calculate Sum
+        //11. calculate Sum
         int x=543604;
         Integer sum = String.valueOf(x)
                 .chars()
@@ -82,7 +92,7 @@ public class ImportantQuestionBeforeInterview {
                 .reduce(0, (a, b) -> a + b);
         System.out.println(sum);
 
-        //11. Find total number of count for particular word from list
+        //12. Find total number of count for particular word from list
         List<String>list=Arrays.asList("java python","java htnl","java jp","js");
         long count = list.stream()
                 .flatMap(word -> Arrays.stream(word.split(" ")))
@@ -90,6 +100,19 @@ public class ImportantQuestionBeforeInterview {
                 .count();
         System.out.println(count);
 
+        //13. Sum of first two number from list
+        List<Integer>list1=Arrays.asList(10,20,30,40,50);
+        int sum1 = list1.stream().limit(2)
+                        .mapToInt(y-> y.intValue())
+                                .sum();
+        System.out.println(sum1);
+        System.out.println("===========");
+
+        //14. Sum of unique number in the list
+        List<Integer>list2=Arrays.asList(10,20,30,40,50,20,30);
+        Integer reduce = list2.stream().distinct()
+                .reduce(0, (a, b) -> a + b);
+        System.out.println(reduce);
 
     }
 }

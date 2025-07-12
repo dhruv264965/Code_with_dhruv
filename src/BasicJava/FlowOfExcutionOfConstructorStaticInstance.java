@@ -14,6 +14,7 @@ class A{
 public class FlowOfExcutionOfConstructorStaticInstance {
     public static void main(String[] args) {
         A a=new A();
+        A b=new A();
     }
 
 }
