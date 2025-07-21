@@ -8,7 +8,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class ReentrantExmple {
     private final Lock lock=new ReentrantLock();
     public void outerLoop(){
-        lock.lock();
+        lock.lock(); //acquire lock
         try {
             System.out.println("OuterLock");
             innerLoop();

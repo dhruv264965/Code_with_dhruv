@@ -4,8 +4,10 @@ answer->
 The contract states:
 
 If two objects are equal (equals() returns true), they must have the same hashCode().
-If two objects have the same hashCode(), they are not necessarily equal, but they will likely be placed in the same bucket.
-By overriding equals() without overriding hashCode(), you can violate this contract. This leads to inconsistent behavior in hash-based collections.
+If two objects have the same hashCode(), they are not necessarily equal, but they will likely be placed in the
+same bucket.
+By overriding equals() without overriding hashCode(), you can violate this contract. This leads to inconsistent
+behavior in hash-based collections.
 
 2. Behavior in HashMap and HashSet
 Insertion:

@@ -39,13 +39,14 @@ public class ImportantQuestionBeforeInterview {
         System.out.println(lengthOfWord);
 
         //6. Find First Non Repeating Character
-        String str4="cabdbd";
+        String str4="abcbda";
         Optional<Map.Entry<Character, Long>> firstNonRepeating = str4.chars().mapToObj(ch -> (char) ch)
                 .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new,Collectors.counting()))
                 .entrySet()
                 .stream()
                 .filter(entry -> entry.getValue() == 1)
                 .findFirst();
+        System.out.println(" Find First Non Repeating Character");
         System.out.println(firstNonRepeating.get());
 
         //7. Find First Repeating Character
@@ -113,6 +114,17 @@ public class ImportantQuestionBeforeInterview {
         Integer reduce = list2.stream().distinct()
                 .reduce(0, (a, b) -> a + b);
         System.out.println(reduce);
+
+        //15. Find 3rd Non Repeating Character
+        String str7="aABbcdDefgh".toLowerCase(Locale.ROOT);
+        Optional<Map.Entry<Character, Long>> thridNonRepeating = str7.chars().mapToObj(ch -> (char) ch)
+                .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new,Collectors.counting()))
+                .entrySet()
+                .stream()
+                .filter(entry -> entry.getValue() == 1)
+                .skip(2)
+                .findFirst();
+        System.out.println(thridNonRepeating.get());
 
     }
 }

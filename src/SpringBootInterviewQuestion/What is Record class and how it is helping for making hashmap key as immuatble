@@ -1,5 +1,5 @@
 Record- to store immutable data
-aim- toreduce bioler plate code
+aim- to reduce bioler plate code
 automatically generate hashcode , equals, constructor
 ----------------
 
@@ -14,12 +14,11 @@ hashCode() – to ensure correct hashing behavior
 🔴 If you don’t override them properly and the object is mutable, your keys may behave unpredictably in the HashMap.
 
 ✅ Why Immutability is Important for HashMap Keys
-HashMap uses hashCode() to place the key in the correct bucket. If the key's fields change after insertion, the object might not be found again.
+HashMap uses hashCode() to place the key in the correct bucket. If the key's fields change after insertion, the object
+ might not be found again.
 
 🔧 Traditional Way (Manual Class)
-java
-Copy
-Edit
+
 class User {
     private final String name;
     private final int id;
@@ -44,9 +43,7 @@ class User {
 
 ✅ Java record Makes This Easy
 🔥 Just one line:
-java
-Copy
-Edit
+
 public record User(String name, int id) {}
 What happens here?
 When you define a record:
@@ -64,9 +61,7 @@ toString()
 Constructor and accessors (name(), id())
 
 ✅ Example Using Record as a HashMap Key
-java
-Copy
-Edit
+
 import java.util.HashMap;
 import java.util.Map;
 

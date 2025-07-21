@@ -1,5 +1,6 @@
 ✅ What is @PropertySource?
-@PropertySource tells Spring to load a specific .properties file from the classpath or file system so that you can access those properties via:
+@PropertySource tells Spring to load a specific .properties file from the classpath or file system so that you can
+access those properties via:
 
 @Value("${...}")
 

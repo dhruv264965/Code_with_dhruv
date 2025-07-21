@@ -8,8 +8,8 @@ import java.util.stream.Collectors;
 public class SortHashMapByValue {
     public static void main(String[] args) {
         Map<String, Integer> map = new HashMap<>();
-        map.put("A", 101);
-        map.put("B", 104);
+        map.put("B", 101);
+        map.put("A", 104);
         map.put("C", 110);
         map.put("E", 100);
         map.put("D", 108);

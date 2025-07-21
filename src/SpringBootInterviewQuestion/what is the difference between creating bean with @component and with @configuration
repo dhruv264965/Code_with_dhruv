@@ -1,5 +1,6 @@
-Main diff- if we create bean inside configuration annotation . singleton bean created but inside
-           component everytime new instance will get
+Main diff- if we create bean inside configuration annotation . singleton bean created and we will get bean
+             in applicationContext but inside
+           component everytime new instance will get and bean created when we run the application
 
 @Component
 Marks a regular Spring-managed bean.

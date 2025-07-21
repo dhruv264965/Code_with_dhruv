@@ -1,5 +1,6 @@
 1. Controller Level (Using @RequestMapping)
-In a Spring Boot application, URLs are typically defined in controllers using annotations like @RequestMapping, @GetMapping, @PostMapping, etc.
+In a Spring Boot application, URLs are typically defined in controllers using annotations like @RequestMapping,
+ @GetMapping, @PostMapping, etc.
 
 import org.springframework.web.bind.annotation.*;
 

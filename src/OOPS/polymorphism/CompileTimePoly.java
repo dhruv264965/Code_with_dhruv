@@ -8,6 +8,10 @@ class Calculator {
     public double sub(double a, double b) {
         return a - b;
     }
+    public double sub(int a, double b) {
+        return a - b;
+    }
+
 
     public int add(int a, int b, int c) {
         return a + b + c;

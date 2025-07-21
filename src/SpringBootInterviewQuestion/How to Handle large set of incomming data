@@ -1,6 +1,7 @@
 Question-- How to handle large set of data in string boot project
  Scenario:
- Imagine your application receives large JSON payloads from clients (e.g., financial transactions, logs, or IoT data). Instead of processing everything immediately and blocking the request thread, we will:
+ Imagine your application receives large JSON payloads from clients (e.g., financial transactions, logs, or IoT data).
+ Instead of processing everything immediately and blocking the request thread, we will:
 
 1 Use Kafka for distributed real-time processing
 2 Use @Async to process background tasks

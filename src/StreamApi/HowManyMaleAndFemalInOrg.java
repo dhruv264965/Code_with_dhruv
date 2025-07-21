@@ -235,6 +235,10 @@ public class HowManyMaleAndFemalInOrg {
                 .sum();
         System.out.println("total salary of all employees "+salary);
         System.out.println("------------------------------------------------------------");
+        List<Employee> employees1 = employees.stream().sorted(Comparator.comparingDouble(Employee::getSalary)
+                .thenComparing(Employee::getAge).thenComparing(Employee::getDepartment)
+        ).toList();
+        System.out.println(employees1);
 
 
     }

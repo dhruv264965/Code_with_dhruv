@@ -101,7 +101,8 @@ Alternatively, use immutable fields (e.g., mark them as final).
 
 
 3. Different Employee instances with identical values
-If two Employee objects have the same values but hashCode() and equals() are not overridden, they will be treated as different keys because Object's default implementation uses memory addresses for equality and hash code.
+If two Employee objects have the same values but hashCode() and equals() are not overridden, they will be treated
+as different keys because Object's default implementation uses memory addresses for equality and hash code.
 Example Problem:
 Employee e1 = new Employee(1, "Alice");
 Employee e3 = new Employee(1, "Alice"); // Same content, different instances
@@ -116,35 +117,46 @@ Interview Questions-
 1. General HashMap Behavior
 Q1: What happens if two keys in a HashMap have the same hashCode() but are not equal?
 
-Answer: The HashMap will store both keys in the same bucket (collision handling), but they will be distinguishable by their equals() method. Retrieval will still work correctly.
+Answer: The HashMap will store both keys in the same bucket (collision handling), but they will be distinguishable
+by their equals() method. Retrieval will still work correctly.
 Q2: What happens if you override hashCode() but not equals()?
 
-Answer: The HashMap might fail to retrieve an object, as the contract between hashCode() and equals() would be violated. Two objects with the same hashCode() might not be considered equal.
+Answer: The HashMap might fail to retrieve an object, as the contract between hashCode() and equals() would be
+violated. Two objects with the same hashCode() might not be considered equal.
 Q3: What happens if the hashCode() of a key changes after it is inserted into the HashMap?
 
-Answer: The HashMap will not be able to find the key, as it uses the original hashCode() to determine the bucket where the key is stored.
+Answer: The HashMap will not be able to find the key, as it uses the original hashCode() to determine the bucket
+where the key is stored.
 2. Practical Scenarios
-Q4: Write a custom Employee class where only the id field determines equality and hash code. How would this impact the behavior of HashMap?
+Q4: Write a custom Employee class where only the id field determines equality and hash code. How would this impact
+the behavior of HashMap?
 
 Follow-up: Add a name field and ask how it can impact the design.
-Answer: Implementing equals() and hashCode() based on id ensures that two employees with the same id are treated as equal, regardless of their name. However, if name changes dynamically and needs to be considered, the implementation must account for mutability.
-Q5: How would you prevent users from modifying fields used in equals() and hashCode() once an object is used as a key in a HashMap?
+Answer: Implementing equals() and hashCode() based on id ensures that two employees with the same id are treated
+as equal, regardless of their name. However, if name changes dynamically and needs to be considered, the
+implementation must account for mutability.
+Q5: How would you prevent users from modifying fields used in equals() and hashCode() once an object is used as
+a key in a HashMap?
 
 Answer: Make those fields final or encapsulate them with immutable types.
 3. Performance Considerations
 Q6: What is the impact of poorly implemented hashCode() methods in a HashMap?
 
-Answer: Poorly implemented hashCode() (e.g., always returning the same value) can lead to frequent collisions, causing all entries to go into the same bucket. This degrades HashMap performance from O(1) to O(n) for lookups.
+Answer: Poorly implemented hashCode() (e.g., always returning the same value) can lead to frequent collisions,
+causing all entries to go into the same bucket. This degrades HashMap performance from O(1) to O(n) for lookups.
 Q7: What are the advantages of using Objects.hash() for hashCode() implementation?
 
-Answer: Objects.hash() provides a simple and efficient way to compute hash codes for multiple fields while ensuring consistency and reducing boilerplate code.
+Answer: Objects.hash() provides a simple and efficient way to compute hash codes for multiple fields while
+ensuring consistency and reducing boilerplate code.
 4. Conceptual Questions
 Q8: Can an object be used as a key in a HashMap if hashCode() and equals() are not overridden?
 
-Answer: Yes, but it will use the default implementations from Object, where hashCode() is based on memory address, and equals() compares references. This may lead to unintended behavior when comparing logically equal objects.
+Answer: Yes, but it will use the default implementations from Object, where hashCode() is based on memory
+ address, and equals() compares references. This may lead to unintended behavior when comparing logically equal objects.
 Q9: Why is it recommended to override both hashCode() and equals() when creating custom keys for HashMap?
 
-Answer: To fulfill the contract that equal objects must have the same hash code, ensuring consistent behavior for lookups and storage.
+Answer: To fulfill the contract that equal objects must have the same hash code, ensuring consistent
+behavior for lookups and storage.
 5. Comparison with Other Collections
 Q10: What is the difference between using an Employee as a key in a HashMap versus in a TreeMap?
 
@@ -166,7 +178,8 @@ Q14: How would you design a HashMap-like data structure where multiple keys can 
 Answer: Implement a custom Key class with a tailored hashCode() and equals() method. Alternatively, consider a MultiKeyMap from libraries like Apache Commons.
 8. Coding Challenge
 Q15: Write a program that counts the number of Employee objects in a List based on unique id.
-Expected Answer: Use a HashMap<Employee, Integer> or a Set<Employee> to track unique employees based on the overridden equals() and hashCode() methods.
+Expected Answer: Use a HashMap<Employee, Integer> or a Set<Employee> to track unique employees based on the
+overridden equals() and hashCode() methods.
 import java.util.*;
 
 class Employee {

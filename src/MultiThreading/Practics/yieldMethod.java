@@ -1,11 +1,12 @@
 package MultiThreading.Practics;
-//The yield() method of thread class causes the currently executing thread object to temporarily pause and allow other threads to execute.
+//The yield() method of thread class causes the currently executing thread object to temporarily pause and allow other
+// threads to execute.
 public class yieldMethod extends Thread{
     @Override
     public void run() {
         for(int i=1;i<100;i++){
             System.out.println("runnning "+Thread.currentThread().getName());
-            Thread.yield();
+           // Thread.yield();
         }
     }
 

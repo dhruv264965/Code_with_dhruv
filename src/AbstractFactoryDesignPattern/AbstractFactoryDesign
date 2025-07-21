@@ -4,13 +4,17 @@ The Abstract Factory Design Pattern is a creational pattern that provides an int
  because it provides a higher level of abstraction compared to the Factory Method Pattern.
 
  When to  use-
- When object creation should be independent of client code – This ensures that new products can be added without modifying existing client code.
- When enforcing consistency among objects – If you want a set of objects to always be used together, like ensuring UI elements of a specific theme match.
+ When object creation should be independent of client code – This ensures that new products can be added without
+ modifying existing client code.
+ When enforcing consistency among objects – If you want a set of objects to always be used together, like ensuring UI
+ elements of a specific theme match.
 
  Why Use Abstract Factory Instead of Factory Method?
- The Abstract Factory Pattern is used when you need to create families of related objects that must be used together. On the other hand, the Factory Method Pattern is used when you need to create only one type of object.
+ The Abstract Factory Pattern is used when you need to create families of related objects that must be used together.
+ On the other hand, the Factory Method Pattern is used when you need to create only one type of object.
 
- If you have multiple related products (e.g., buttons and checkboxes for different OS), Abstract Factory is the right choice.
+ If you have multiple related products (e.g., buttons and checkboxes for different OS), Abstract Factory is the
+ right choice.
  If you only need to create a single object (e.g., only a Vehicle), Factory Method is enough.
 
  Key Differences Between Factory Method and Abstract Factory

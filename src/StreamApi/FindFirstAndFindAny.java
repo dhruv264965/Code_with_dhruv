@@ -4,7 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 public class FindFirstAndFindAny {
-  //findFirst and findAny are two terminal operations provided in Java's Stream API. Both are used to retrieve an element from a stream, but they behave slightly differently based on the nature of the stream (sequential or parallel).
+  //findFirst and findAny are two terminal operations provided in Java's Stream API. Both are used to retrieve an
+  // element from a stream, but they behave slightly differently based on the nature of the stream (sequential or parallel).
   //
   //Key Differences:
   //Behavior in Sequential Streams:

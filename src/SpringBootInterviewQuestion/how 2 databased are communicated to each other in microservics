@@ -141,7 +141,9 @@ public class UserEventConsumer {
     }
 }
 🧠 Summary (For Interview):
-"In a microservices setup, I avoid direct DB calls across services. Instead, I publish domain events (like UserCreated) to Kafka.
+"In a microservices setup, I avoid direct DB calls across services. Instead, I publish domain events (like UserCreated)
+ to Kafka.
 
-The OrderService listens to these events and stores the necessary user info in its own DB. This ensures data separation, loose coupling, and scalable async communication."
+The OrderService listens to these events and stores the necessary user info in its own DB. This ensures data
+separation, loose coupling, and scalable async communication."
 
