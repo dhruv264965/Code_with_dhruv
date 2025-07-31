@@ -3,6 +3,7 @@ package StreamApi;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class ImportantQuestionBeforeInterview {
     public static void main(String[] args) {
@@ -50,6 +51,7 @@ public class ImportantQuestionBeforeInterview {
         System.out.println(firstNonRepeating.get());
 
         //7. Find First Repeating Character
+        System.out.println(" Find First Repeating Character index");
         String str5="cabdbd";
         Optional<Map.Entry<Character, Long>> firstRepeating = str5.chars().mapToObj(ch -> (char) ch)
                 .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new,Collectors.counting()))
@@ -58,6 +60,24 @@ public class ImportantQuestionBeforeInterview {
                 .filter(entry -> entry.getValue() >1)
                 .findFirst();
         System.out.println(firstRepeating.get());
+
+        System.out.println(" Find First Repeating Character index");
+        String str10="cabdbd";
+        Optional<Map.Entry<Character, Long>> firstRepeatingindex = str10.chars().mapToObj(ch -> (char) ch)
+                .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new,Collectors.counting()))
+                .entrySet()
+                .stream()
+                .filter(entry -> entry.getValue() >1)
+                .findFirst();
+        firstRepeatingindex.ifPresent(entry -> {
+            char ch = entry.getKey();
+            int index = IntStream.range(0, str10.length())
+                    .filter(i -> str10.charAt(i) == ch)
+                    .findFirst()
+                    .orElse(-1);
+            System.out.println("First repeating character '" + ch + "' found at index: " + index);
+        });
+        System.out.println(firstRepeatingindex.get());
 
         //8. Write a program to find second highest number
         int arr[]={3,6,4,2,7,9,9,1};

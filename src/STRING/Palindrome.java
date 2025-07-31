@@ -2,10 +2,10 @@ package STRING;
 
 public class Palindrome {
     public static boolean ispalindrome(String str)
-    {
+    {String cleaned = str.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
         boolean flag=true;
-        for (int i = 0, j = str.length() - 1; i<=j ; i++, j--) {
-            if (str.charAt(i) !=str.charAt(j))
+        for (int i = 0, j = cleaned.length() - 1; i<=j ; i++, j--) {
+            if (cleaned.charAt(i) !=cleaned.charAt(j))
             {
                 flag=false;
             }
@@ -26,7 +26,8 @@ public class Palindrome {
     }
 
     public static void main(String[] args) {
-        String str="madam";
+     //   String str="Was it a car or a cat I saw?";
+        String str="0P";
         System.out.println(ispalindrome(str));
        ispalindromeOneLoop(str);
     }

@@ -9,7 +9,7 @@ public class TreeSetExample {
         fruits.add("Apple");
         fruits.add("Orange");
         fruits.add("Mango");
-        fruits.add(null);    //// Throws NullPointerException
+      //  fruits.add(null);    //// Throws NullPointerException
 
         System.out.println("TreeSet: " + fruits);
 

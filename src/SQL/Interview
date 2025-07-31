@@ -3,6 +3,15 @@ Answer-SELECT MAX(salary)
        FROM employee
        WHERE salary < (SELECT MAX(salary) FROM employee);
 
+       or  select  age as secondMaxAge  from employee
+              order by age DESC
+              limit 1 offset 1;  Skips the top 1, fetches the 2nd(1st we sort the data based on decending after that
+                                                                   skip 1 record so
+or
+select * from employee;
+select distinct salary from employee
+order by salary desc
+limit 1,1;
 2. ACID properties with example
 Answer-Atomicity – A transaction is treated as a single unit, meaning it either completes fully or does not happen
                       at all. If any part of the transaction fails, the entire transaction is rolled back.
@@ -46,3 +55,25 @@ Answer-Atomicity – A transaction is treated as a single unit, meaning it eithe
        integrity.
        Transactional Systems like banking, e-commerce, and financial applications rely on ACID compliance for
        correctness.
+
+
+3. Write a query to retrieve employees who earn more than the average salary.
+   select * from employee
+   where salary > (select Avg(salary) from employee);
+
+4.   -- Write a query to fetch the duplicate age  from a column in a table. and also count
+       select age  ,count(*)
+       from employee
+       group by age
+       having count(*)>1;
+
+5. Write a query to fetch top 3 earning employees.
+       SELECT *
+       FROM Employee
+       ORDER BY Salary DESC
+       LIMIT 3;
+
+6. sum and avg of each department
+select department, sum(salary) as total_sum, avg(salary) as avg_salary
+from employee
+group by department;

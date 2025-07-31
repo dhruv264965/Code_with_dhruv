@@ -7,6 +7,21 @@ import java.util.List;
 public class SeprateLetterAndNumber {
     public static void main(String[] args) {
         String str="g1b4v2c7m9n4";
+
+        StringBuilder digit=new StringBuilder();
+        StringBuilder character=new StringBuilder();
+         for(char ch:str.toCharArray()){
+            if(Character.isDigit(ch)){
+                digit.append(ch);
+            }
+            else if(Character.isLetter(ch)){
+                character.append(ch);
+            }
+        }
+        System.out.println(digit);
+        System.out.println(character);
+
+
         String letters=str.replaceAll("\\d","");
         System.out.println(letters);
         String numbers=str.replaceAll("\\D","");

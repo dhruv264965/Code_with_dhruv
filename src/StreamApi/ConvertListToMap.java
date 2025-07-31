@@ -52,6 +52,13 @@ public class ConvertListToMap {
                         (existing,duplicate)->duplicate
                                       ));
         System.out.println(collect);
-
+//        List<Integer> numbers = Arrays.asList(1, 1, 2, 3, 3, 4, 5, 5, 6, 6);
+//        numbers.stream()
+//                .collect(Collectors.toMap(
+//                        number -> number,
+//                        number -> number,
+//                        (existing, duplicate) -> duplicate
+//                ))
+//        System.out.println(collect1);
     }
 }

@@ -15,12 +15,14 @@ public class SortHashMapByValue {
         map.put("D", 108);
         map.put("G", 108);  // remove replicate also
 
-        LinkedHashMap<String, Integer> sortedMap = map.entrySet().stream()
+        LinkedHashMap<String, Integer> collect = map.entrySet().stream()
                 .sorted(Map.Entry.<String,Integer>comparingByValue().reversed())
-                .collect(Collectors.toMap( Map.Entry::getKey,
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
                         Map.Entry::getValue,
-                        (existing, rep) -> existing,
-                        LinkedHashMap::new ));
-        System.out.println(sortedMap);
+                        (existing, replacement) -> existing,
+                        LinkedHashMap::new
+                ));
+        System.out.println(collect);
     }
 }

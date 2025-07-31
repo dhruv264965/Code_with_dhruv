@@ -7,9 +7,7 @@ access those properties via:
 Or through the Environment object
 
 ✅ Syntax
-java
-Copy
-Edit
+
 @PropertySource("classpath:myconfig.properties")
 @Configuration
 public class AppConfig {
@@ -18,9 +16,7 @@ public class AppConfig {
 While Spring Boot uses application.properties or application.yml by default, you may have custom property files like:
 
 db.properties
-
 aws.properties
-
 payment-config.properties
 
 You use @PropertySource to explicitly load those files.
@@ -28,22 +24,16 @@ You use @PropertySource to explicitly load those files.
 ✅ Example
 🔹 Step 1: Create appconfig.properties
 properties
-Copy
-Edit
 app.name=SpringBootDemo
 app.version=1.0.0
 🔹 Step 2: Use @PropertySource to Load It
-java
-Copy
-Edit
+
 @Configuration
 @PropertySource("classpath:appconfig.properties")
 public class AppConfig {
 }
 🔹 Step 3: Inject Property Using @Value
-java
-Copy
-Edit
+
 @Component
 public class AppService {
 
@@ -59,9 +49,6 @@ public class AppService {
 }
 ✅ Output:
 
-yaml
-Copy
-Edit
 App: SpringBootDemo, Version: 1.0.0
 ✅ Key Points
 Feature	Description
@@ -78,16 +65,13 @@ Spring Boot already loads application.properties automatically. So @PropertySour
 ✅ Alternative in Spring Boot (Recommended)
 For Spring Boot, it's often better to use:
 
-yaml
-Copy
-Edit
+
 # application.yml
 spring.config.import=classpath:my-extra-config.properties
 Or if external:
 
 properties
-Copy
-Edit
+
 spring.config.import=file:/path/to/extra.properties
 This is better than using @PropertySource if you're not writing custom @Configuration classes.
 

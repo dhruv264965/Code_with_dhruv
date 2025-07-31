@@ -16,7 +16,7 @@ public class PrintDuplicateElemnt {
                 .filter(x -> x.getValue() > 1)
                 .map(entry -> entry.getKey())
                 .collect(Collectors.toList());
-        System.out.println("Duplocate ement is  "+ duplicateElement);
+        System.out.println("Duplicate element is  "+ duplicateElement);
 
         //print unique element
         System.out.println("print unique element");

@@ -1,31 +1,19 @@
 package HashMap;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class CountFrequencyOfString {
     static void countFreqOfString(String str) {
         HashMap<Character, Integer> map = new HashMap<>();
-        for (int i = 0; i < str.length(); i++) {
-            char ch=str.charAt(i);
-            if (ch != ' ') { //if we are not counting space
-//                if (map.containsKey(ch)) {
-//                    map.put(ch, map.get(ch) + 1);
-//                } else
-//                    map.put(ch, 1);
-
-                    map.put(ch,map.getOrDefault(ch,0)+1);
-
-            }
+        for(char ch:str.toCharArray()){
+            if(ch!=' ')   // if we dont want space
+            map.put(ch,map.getOrDefault(ch,0)+1);
         }
-        System.out.println(map);
-        System.out.println();
-        // Construct the formatted output
-        StringBuilder result = new StringBuilder();
-        for (char key : map.keySet()) {
-            result.append(key).append(map.get(key));
+        System.out.println(map);  // {r=1, d=1, e=1, u=1, v=1, w=1, h=3, l=2, o=2}
+        for(Map.Entry<Character,Integer>entry:map.entrySet()){
+            System.out.print(entry.getKey()+""+entry.getValue()); // r1d1e1u1v1w1h3l2o2
         }
-
-        System.out.println(result.toString());
     }
 
     public static void main(String[] args) {

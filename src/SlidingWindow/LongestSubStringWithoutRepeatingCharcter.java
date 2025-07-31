@@ -30,25 +30,25 @@ public class LongestSubStringWithoutRepeatingCharcter {
     }
     static int lengthOfLongestSubStringWithoutRepeatingCharacterOptimal(String s){
         int result = 0;
-        Map<Character, Integer> hash_map = new HashMap<>();
+        Map<Character, Integer> hp = new HashMap<>();
         int i = 0;
         int j = 0;
         while (j < s.length()) {
             char ch = s.charAt(j);
-            if (hash_map.containsKey(ch)) {   //  // agar hamara character repeat karta hai then i index koupdate kar denge
-                i = Math.max(hash_map.get(ch), i);
+            if (hp.containsKey(ch)) {   //  // agar hamara character repeat karta hai then i index koupdate kar denge
+                i = Math.max(hp.get(ch), i);
             }
             result = Math.max(result, j - i + 1);
-            hash_map.put(ch, j + 1);  // storing index +1 because if j=0 and value is "a" then it will sore[a:1]
+            hp.put(ch, j + 1);  // storing index +1 because if j=0 and value is "a" then it will sore[a:1]
             j++;
         }
         return result;
     }
     public static void main(String[] args) {
 //         String s="abcabcbb";
-//         String s="pwwkew";
+         String s="pwwkew";
 //         String s="bbbbb";
-        String s="geeksforgeeks";
+//        String s="geeksforgeeks";
 //        System.out.println(lengthOfLongestSubStringWithoutRepeatingCharacterBruteForce(s));
         System.out.println(lengthOfLongestSubStringWithoutRepeatingCharacterOptimal(s));
     }

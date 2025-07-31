@@ -90,7 +90,7 @@ public class HowManyMaleAndFemalInOrg {
                 new Employee(2, "Arti Shukla", 25, "Female", 20000,"CSE"),
                 new Employee(3, "Ashish Shukla", 40, "Male", 70000,"EC"),
                 new Employee(4, "Vandana Shukla", 35, "Female", 95000,"Mech"),
-                new Employee(5, "Amit Shukla", 50, "Male", 90000,"CSE")
+                new Employee(5, "Amit Shukla", 50, "Male", 95000,"CSE")
         );
         //What is the average and total salary in the organization
         System.out.println("What is the average and total salary in the organization");
@@ -179,6 +179,12 @@ public class HowManyMaleAndFemalInOrg {
                 OldestEmployeeFirstName.orElse("No employees found"));
 
         System.out.println("-------------------------------------------------------------");
+        // Age of  oldest employee
+        System.out.println(" Age of  oldest employee ");
+        Optional<Employee> max = employees.stream().max(Comparator.comparing(Employee::getAge));
+        System.out.println(max.get().getAge());
+
+        System.out.println("-------------------------------------------------------------");
         // find employee with Highest salary
         System.out.println("Highest salary ");
         //appraoach 1
@@ -216,18 +222,47 @@ public class HowManyMaleAndFemalInOrg {
         System.out.println("Female employee Highest salary");
         Optional<Employee> Female = collect.get("Female");
         System.out.println(Female);
+        System.out.println("-----------------------------------------------------------------------------------");
+        // find highest salary in each department
+        System.out.println("find highest salary in each department");
+        Map<String, Optional<Employee>> collect8 = employees.stream()
+                .collect(Collectors.groupingBy(Employee::getDepartment, Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary))));
+        System.out.println(collect8);
+        System.out.println("-------------------------------------------------------------------------------------");
+        // find department who has maximum number of employeee
+        System.out.println("find department who has maximum number of employeee");
+        Map.Entry<String, Long> stringLongEntry = employees.stream().collect(Collectors.groupingBy(Employee::getDepartment, Collectors.counting()))
 
-
+                .entrySet()
+                .stream().max(Map.Entry.comparingByValue()).get();
+        System.out.println(stringLongEntry);
+        System.out.println("-------------------------------------------------------------------------------------");
+        // list of employee name start with A
+        System.out.println("list of employee name start with A");
+        List<Employee> a = employees.stream()
+                .filter(emp -> emp.getName().startsWith("A")).toList();
+        System.out.println(a);
         System.out.println("-------------------------------------------------------------------------------------");
         //Top Two highest paid employee
         System.out.println("Top Two highest paid employee");
         List<Employee> topTwoHighestPaidEmployees = employees.stream()
                 .sorted(Comparator.comparingDouble(Employee::getSalary).reversed()) // Sort by salary in descending order
-                .limit(2) // Limit to top 2 employees
+                .limit(3) // Limit to top 2 employees
                 .collect(Collectors.toList());
         topTwoHighestPaidEmployees.forEach(employee -> // Print the result
                 System.out.println("Employee: " + employee.getName() + ", Salary: " + employee.getSalary()));
 
+        System.out.println("-------------------------------------------------------------------------------------");
+
+        //Top Two highest paid employee with lexicial manner
+        System.out.println("Top Two highest paid employee with lexicial manner");
+        List<Employee> topTwoHighestPaidEmployeeslexicial = employees.stream()
+                .sorted(Comparator.comparingDouble(Employee::getSalary).reversed().thenComparing(Employee::getName))
+                // Sort by salary in descending order
+                .limit(3) // Limit to top 2 employees
+                .collect(Collectors.toList());
+        topTwoHighestPaidEmployeeslexicial.forEach(employee -> // Print the result
+                System.out.println("Employee: " + employee.getName() + ", Salary: " + employee.getSalary()));
         System.out.println("----------------------------------------------------------------------------");
         //Get the total salary of all employees:
         double salary=employees.stream()

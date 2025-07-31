@@ -12,18 +12,22 @@ public class ProductOFArrayExceptSelf {
 //    }
 
     public static void main(String[] args) {   //[48,24,12,8]
+        //brute force approach
         int num[] = {1, 2, 4, 6};
-        List<Integer> list = new ArrayList<>();
-        int sum = 0;
-        int total_sum=0;
-        for (int i = 0; i < num.length; i++) {
-            for (int j = i + 1; j < num.length; j++) {
-                sum += num[j]*num[j];
-                total_sum=sum-num[i];
-                i++;
+        int n=num.length;
+        int res[]=new int[n];
+        for(int i=0;i< num.length;i++){
+            int prod=1;
+            for(int j=0;j<n;j++){
+                if(i!=j){
+                    prod*=num[j];
+                }
             }
-            list.add(total_sum);
+                res[i]=prod;
+
         }
-        System.out.println(list);
+        for(int x:res) {
+            System.out.print(x+" ");
+        }
     }
 }

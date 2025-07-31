@@ -7,12 +7,9 @@ import java.util.stream.Collectors;
 public class NumberStartingWithOne {
     public static void main(String[] args) {
         int arr[]={10,157,56,421,65,135};
-        List<Integer> collect= Arrays.stream(arr)
-                .filter(num -> String.valueOf(num).startsWith("1"))
-                .boxed()
-                .collect(Collectors.toList());
+        List<Integer> list = Arrays.stream(arr).filter(num -> String.valueOf(num).startsWith("1")).boxed().toList();
 
-        System.out.println(collect);
+        System.out.println(list);
         System.out.println("------------------------------------------");
 
         List<Integer>input=Arrays.asList(10,157,56,421,65,135);

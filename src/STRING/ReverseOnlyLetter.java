@@ -28,8 +28,8 @@ public class ReverseOnlyLetter {
         return (65<=c && c<=90) || (97<=c && c<=122);
     }
     public static void main(String[] args) {
-        String s="a-bC-dEf-ghIj";
-//        String s="a@b@c@d@e@f";
+//        String s="a-bC-dEf-ghIj";
+        String s="a@b@c@d@e@f";
         System.out.println(reverseOnlyLetters(s));
 
     }

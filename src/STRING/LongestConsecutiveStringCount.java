@@ -5,6 +5,7 @@ import java.util.HashSet;
 public class LongestConsecutiveStringCount {
     public static void main(String[] args) {
         String str="dhruvshuklawx";
+//        String str="pwwkew";
         HashSet<Character> hp=new HashSet<>();
         for(char ch:str.toCharArray()){
             hp.add(ch);

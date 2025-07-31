@@ -29,8 +29,8 @@ public class mergeTwoSortedArray {
         return ans;
     }
     public static void main(String[] args) {
-        int arr1[]={9,7,2,65,41};
-        int arr2[]={42,11,4,67,40};
+        int arr1[]={1,2,3,9};
+        int arr2[]={6,16,18};
         int n= arr1.length;
         int m= arr2.length;
         int ans[]=new int[n+m];
