@@ -15,7 +15,7 @@ public class Prime {
         System.out.println(list1);
 
         // print all prime numbers from 1 to 20 using the same isPrime method.
-        IntStream.rangeClosed(1, 20)
+        IntStream.range(1, 20)
                 .filter(Prime::isPrime)
                 .forEach(n -> System.out.println(n + " is prime"));
     }

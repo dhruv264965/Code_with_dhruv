@@ -52,13 +52,20 @@ public class ConvertListToMap {
                         (existing,duplicate)->duplicate
                                       ));
         System.out.println(collect);
-//        List<Integer> numbers = Arrays.asList(1, 1, 2, 3, 3, 4, 5, 5, 6, 6);
-//        numbers.stream()
-//                .collect(Collectors.toMap(
-//                        number -> number,
-//                        number -> number,
-//                        (existing, duplicate) -> duplicate
-//                ))
-//        System.out.println(collect1);
+        List<Integer> numbers = Arrays.asList(1, 1, 2, 3, 3, 4, 5, 5, 6, 6);
+        Map<Integer, Integer> ListToMapCon = numbers.stream()
+                .collect(Collectors.toMap(
+                        abc->abc,
+                         abc->abc,
+                        (existing, duplicate) -> duplicate
+                ));
+        System.out.println(ListToMapCon);
+
+        List<String> words = Arrays.asList("dhruv","shukla","sachin","ankit");
+        Map<String, Integer> collect1 = words.stream().collect(Collectors.toMap(
+                word -> word,
+                word -> word.length()
+        ));
+        System.out.println(collect1);
     }
 }

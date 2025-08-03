@@ -11,7 +11,8 @@ public class SecondMostFreqWord {
     public static void main(String[] args) {
         List<String>words= Arrays.asList("apple","banana","orange","apple","apple","orange");
 
-       Map<String,Long>freqCount= words.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+       Map<String,Long>freqCount= words.stream().
+               collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
         System.out.println(freqCount);
         List<Map.Entry<String, Long>> collect = freqCount.entrySet().stream()
                 .sorted((a, b) -> a.getValue().compareTo(b.getValue()))

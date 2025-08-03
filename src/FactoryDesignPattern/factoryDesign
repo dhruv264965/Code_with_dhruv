@@ -27,3 +27,20 @@ Ensures consistent object creation logic and better management of instance creat
 ✅ Encourages Open/Closed Principle (OCP) from SOLID Principles
 
 New types can be added without modifying existing code, making the system extensible.
+
+-----------------------------------------------------------------------------------------------------
+factory design pattern - It encapsulate the object creation logic within separate class called factory.
+                        When new classes need to be added frequently without modifying existing client code.
+
+Example-Suppose we want to rent a vehicle (the vehicle can be anything like car , bike , bus etc. ) so instead
+        of creating a vehicle we will go to a vehicle rental shop and it will give us our desired vehicle .
+        This is what factory design does . In factory design pattern there is a method which is a factory
+        which gives us desired object . It is one of the best ways to create an object where object creation
+        logic is hidden from the client.
+
+ Client-> Vehical factory(connect to vehical factory) -> Vehicle(interface , abstract class) -> car, bike , bus -> Product class
+
+ Benefit- Loose coupling- The client code depends only on the factory and the common interface, not on concrete implementations, reducing dependencies.
+          Hide complex logic from client
+
+

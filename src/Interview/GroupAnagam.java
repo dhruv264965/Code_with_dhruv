@@ -24,10 +24,11 @@ public class GroupAnagam {
         // Approach 2 TC O(n)
         HashMap<String,List<String>> hp=new HashMap<>();
         for(String str:strs){
-            int freq[]=new int[28];
+            int freq[]=new int[28];   // {"eat", "tea", "tan", "ate", "nat", "bat"};
             for(char ch:str.toCharArray()){
                 freq[ch-'a']++;
             }
+
             StringBuilder sb= new StringBuilder();
             for (int i:freq){
                 sb.append("H");

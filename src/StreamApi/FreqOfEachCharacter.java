@@ -21,6 +21,10 @@ public class FreqOfEachCharacter {
         System.out.println(sortFreq);
 
         // Return duplicate character
-
+        List<String> entries = sortFreq.stream()
+                .filter(x -> x.getValue() > 1)
+                .map(a->a.getKey())
+                .toList();
+        System.out.println(entries);
     }
 }
