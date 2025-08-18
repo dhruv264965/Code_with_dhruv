@@ -4,9 +4,6 @@ Constructor injection ensures dependencies are final and set once at object crea
 
 This makes the bean immutable, which is safer and easier to reason about.
 
-java
-Copy
-Edit
 @Service
 public class MyService {
     private final UserRepository repo;

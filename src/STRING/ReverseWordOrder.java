@@ -17,12 +17,12 @@ public class ReverseWordOrder {
        // 2nd appoach
         StringBuilder ss=new StringBuilder();
         for(int i=word.length-1;i>=0;i--){
-            ss.append(word[i]);
-            if(i!=0){
-                ss.append(" ");
-            }
+            ss.append(word[i]).append(" ");
+//            if(i!=0){
+//                ss.append(" ");
+//            }
         }
-        System.out.println(ss.toString());
+        System.out.println(ss.toString().trim());
 
     }
 }

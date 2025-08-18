@@ -17,14 +17,14 @@ public class ReverseArrayByKStepLeftRotate {
         k=k%n;
         rotate(arr,0,k-1);  // 3 2 1
         for (int x:arr){
-            System.out.print(x+" ");  //3 2 1 4 5 6 7
+        //    System.out.print(x+" ");  //3 2 1 4 5 6 7
         }
-        System.out.println();
+      //  System.out.println();
         rotate(arr,k,n-1); // 7 6 5 4    combne=3 2 1 7 6 5 4
         for (int x:arr){
-            System.out.print(x+" ");  // 3 2 1 7 6 5 4
+         //   System.out.print(x+" ");  // 3 2 1 7 6 5 4
         }
-        System.out.println();
+       // System.out.println();
         rotate(arr,0,n-1);  // 4 5 6 7 1 2 3
         for (int x:arr){
             System.out.print(x+" "); //4 5 6 7 1 2 3

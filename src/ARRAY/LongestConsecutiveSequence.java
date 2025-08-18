@@ -12,7 +12,7 @@ import java.util.HashSet;
 //Output: 4
 //Explanation: The longest consecutive sequence is [1, 2, 3, 4].
 public class
-LongestConsecutiveSequence {
+             LongestConsecutiveSequence {
     public static int countLongestConsecutiveSequenceBruteForce(int arr[]){
         Arrays.sort(arr);
         int count =1;               // SPACE-O(1) (Constant space usage).

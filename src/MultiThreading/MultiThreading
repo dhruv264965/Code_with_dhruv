@@ -25,7 +25,12 @@ Difference between Thread.start() and Thread.run() in Java-->
 *start()-Can’t be invoked more than one time otherwise throws java.lang.IllegalStateException.
  run()-Multiple invocation is possible
 *start()-Defined in java.lang.Thread class.
+
  run()-Defined in java.lang.Runnable interface and must be overridden in the implementing class.
+
+ start() is used to start a new thread and call the thread’s run() method in a separate call stack (a new thread).
+
+ run() is just a normal method — if you call it directly, it will execute on the current thread, not on a new one.
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Excuator Framework- (Thread Pools)->

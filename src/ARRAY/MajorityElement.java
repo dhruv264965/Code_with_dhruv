@@ -27,12 +27,12 @@ public class MajorityElement {
         System.out.println(sorted);
         if(!sorted.isEmpty()){
             System.out.println(sorted.get(0).getKey());
-            System.out.println(sorted.get(1).getKey());
-            System.out.println(sorted.get(sorted.size()-1).getKey());
+          //  System.out.println(sorted.get(1).getKey());
+           // System.out.println(sorted.get(sorted.size()-1).getKey());
         }
     }
     public static void main(String[] args) {
-      int nums[]={3,2,3,2,1,1,1};
+      int nums[]={4,5,9,8,6,7,5,2,3,6,4,1,5,2,8,6,7,6,1,6};
       majorityElement(nums);
     }
 }

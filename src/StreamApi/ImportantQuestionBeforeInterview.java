@@ -36,7 +36,7 @@ public class ImportantQuestionBeforeInterview {
         //5. Length of each word in String
         String str3="java is good and popular";
         Map<String, Integer> lengthOfWord = Arrays.stream(str3.split(" "))
-                .collect(Collectors.toMap(s->s,String::length,(a,b)->a,LinkedHashMap::new));
+                .collect(Collectors.toMap(s->s,String::length));
         System.out.println(lengthOfWord);
 
         //6. Find First Non Repeating Character
@@ -112,6 +112,11 @@ public class ImportantQuestionBeforeInterview {
                 .mapToObj(ch -> ch - '0')
                 .reduce(0, (a, b) -> a + b);
         System.out.println(sum);
+        int sum2 = String.valueOf(x)       // convert number to string
+                .chars()             // IntStream of char codes
+                .map(c -> c - '0')   // convert char to digit
+                .sum();
+        System.out.println(sum2);
 
         //12. Find total number of count for particular word from list
         List<String>list=Arrays.asList("java python","java htnl","java jp","js");

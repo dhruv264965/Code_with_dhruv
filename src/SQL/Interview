@@ -12,6 +12,7 @@ select * from employee;
 select distinct salary from employee
 order by salary desc
 limit 1,1;
+
 2. ACID properties with example
 Answer-Atomicity – A transaction is treated as a single unit, meaning it either completes fully or does not happen
                       at all. If any part of the transaction fails, the entire transaction is rolled back.
@@ -77,3 +78,49 @@ Answer-Atomicity – A transaction is treated as a single unit, meaning it eithe
 select department, sum(salary) as total_sum, avg(salary) as avg_salary
 from employee
 group by department;
+
+7. highest salary per department:
+    SELECT d.department_name, e.name, e.salary
+    FROM employees e
+    JOIN departments d ON e.department_id = d.id
+    WHERE e.salary = (
+        SELECT MAX(salary)
+        FROM employees
+        WHERE department_id = e.department_id
+    );
+
+
+8.Departments with No Employees
+   SELECT d.department_name
+   FROM departments d
+   LEFT JOIN employees e ON d.id = e.department_id
+   WHERE e.id IS NULL;
+
+9. Employees Earning Above Average Salary
+    SELECT name, salary
+    FROM employees
+    WHERE salary > (SELECT AVG(salary) FROM employees);
+
+10. Get employees whose salary is above department average
+   SELECT e.*
+   FROM employees e
+   JOIN (
+       SELECT department_id, AVG(salary) AS dept_avg
+       FROM employees
+       GROUP BY department_id
+   ) avg_table
+   ON e.department_id = avg_table.department_id
+   WHERE e.salary > avg_table.dept_avg;
+
+    OR
+
+     SELECT d.department_name, e.name, e.salary
+        FROM employees e
+        JOIN departments d ON e.department_id = d.id
+        WHERE e.salary > (
+            SELECT AVG(salary)
+            FROM employees
+            WHERE department_id = e.department_id
+        );
+
+

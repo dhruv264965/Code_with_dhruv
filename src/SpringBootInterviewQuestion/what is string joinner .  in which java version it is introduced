@@ -1,5 +1,6 @@
 ✅ What is StringJoiner in Java?
-StringJoiner is a utility class introduced in Java 8 that makes it easy to build a single string by joining multiple elements with a delimiter, and optionally a prefix and suffix.
+StringJoiner is a utility class introduced in Java 8 that makes it easy to build a single string by
+joining multiple elements with a delimiter, and optionally a prefix and suffix.
 ✅ Java Version Introduced
 StringJoiner was introduced in Java 8 (java.util.StringJoiner).
 

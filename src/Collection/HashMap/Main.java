@@ -15,7 +15,11 @@ public class Main {
         // Retrieve values
         //with overirde equals and hashcode-->
         System.out.println("e1 Role: " + map.get(e1)); // Manager
-        System.out.println("e3 Role: " + map.get(e3)); // Manager
+        System.out.println("e3 Role: " + map.get(e3)); // Manager // becz e1 and e3 has same hashcode
+        System.out.println(map.size());  //Why size stays 2
+       // HashMap.size() ;increases only when you put() a new key that is not already equal to an existing key.
+
+              //  Since e3 is equal to e1 (when equals() and hashCode() are overridden), the map treats them as the same key, not a new one.
         System.out.println("------------------------------------------------------------------");
         // without overirde equals and hashcode-->If two Employee objects have the same values but hashCode() and equals() are not
         //                                       overridden, they will be treated as different keys because Object's
@@ -26,7 +30,9 @@ public class Main {
          // if we modify e1 value-and also override equals and hashcode method
         e1.setName("Alice Changed");
         System.out.println(map.get(e1)); // null
-        System.out.println(map.get(e3));
+        System.out.println(map.get(e3)); // null
+        System.out.println(map.get(e2)); // developer
+        System.out.println(map.size());
 
 
     }

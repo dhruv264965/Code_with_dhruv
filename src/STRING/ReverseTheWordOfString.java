@@ -5,15 +5,15 @@ import java.util.Stack;
 
 public class ReverseTheWordOfString {
     static String reverseTheWordOfString(String str) {
-        String[] splitIntoWord=str.split(" ");
-        System.out.println(splitIntoWord);
-        String result="";
-        for(String word:splitIntoWord){
-            String reversedString="";
-            for(int i=word.length()-1;i>=0;i--){
-               reversedString+=word.charAt(i);
+        String arr[] = str.split(" ");
+        String result = "";
+        for (String word : arr) {
+            String reverseString = "";
+
+            for (int i = word.length() - 1; i >= 0; i--) {
+                reverseString += word.charAt(i);
             }
-            result+=reversedString+" ";
+            result += reverseString + " ";
         }
         return result.trim();
     }
@@ -40,7 +40,7 @@ public class ReverseTheWordOfString {
     }
     public static void main(String[] args) {
         String str="Dhruv shukla is good boy";
-       // System.out.println(reverseTheWordOfString(str));
+        System.out.println(reverseTheWordOfString(str));
        // System.out.println(reverseTheWordOfStringOptimalUsingStack(str));
         reverseWord(str);
 

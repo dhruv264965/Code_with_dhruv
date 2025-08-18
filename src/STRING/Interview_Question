@@ -33,7 +33,7 @@ sb.append(" World");  // Modifies the original object
 System.out.println(sb.toString()); // Prints: Hello World
 -----------------------------------------------------------------------------------
 
-String s1 = "TAT";
+        String s1 = "TAT";
         String s2 = "TAT";                   stack- s1,s2,s3,s4
                                              heap -  tat(for s1 and s2) tat(s3) tat(s4)
         String s3 = new String("TAT");

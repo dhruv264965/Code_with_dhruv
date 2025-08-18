@@ -21,6 +21,19 @@ public class RemoveDuplicate {
         for (int num : result) {
             System.out.print(num + " ");
         }
+        // public int removeDuplicates(int[] nums) {
+        //        HashSet<Integer> gp=new HashSet<>();
+        //        for(int x:nums){
+        //            gp.add(x);
+        //        }
+        //        int i = 0;
+        //        for (int num : gp) {
+        //            nums[i++] = num;
+        //        }
+        //
+        //        // Return the count of unique elements
+        //        return gp.size();
+        //    }
 
     }
 }

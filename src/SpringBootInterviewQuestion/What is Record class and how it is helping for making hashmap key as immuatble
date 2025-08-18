@@ -11,10 +11,12 @@ equals() – to check logical equality between keys
 
 hashCode() – to ensure correct hashing behavior
 
-🔴 If you don’t override them properly and the object is mutable, your keys may behave unpredictably in the HashMap.
+🔴 If you don’t override them properly and the object is mutable, your keys may behave unpredictably in
+the HashMap.
 
 ✅ Why Immutability is Important for HashMap Keys
-HashMap uses hashCode() to place the key in the correct bucket. If the key's fields change after insertion, the object
+HashMap uses hashCode() to place the key in the correct bucket. If the key's fields change after
+ insertion, the object
  might not be found again.
 
 🔧 Traditional Way (Manual Class)

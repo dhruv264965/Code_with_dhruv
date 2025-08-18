@@ -1,5 +1,6 @@
 Threads themselves are inherently mutable — their state changes as they run (e.g., NEW, RUNNABLE, BLOCKED, etc.).
-But if the interviewer is asking how to make the data used by a thread immutable, then I can achieve thread-safe behavior by sharing only immutable objects or by not sharing mutable state at all.
+But if the interviewer is asking how to make the data used by a thread immutable, then I can achieve thread-safe behavior by
+sharing only immutable objects or by not sharing mutable state at all.
 
 ✅ Key Concept:
 You can’t make a Thread object immutable, but you can:
@@ -11,9 +12,7 @@ Avoid sharing mutable objects between threads.
 Make sure the Runnable or Callable passed to the thread only uses final or immutable fields.
 
 🔧 Simple Example: Using Immutable Data in a Thread
-java
-Copy
-Edit
+
 // Immutable class
 final class UserData {
     private final String name;

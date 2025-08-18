@@ -157,3 +157,31 @@ public class Demo {
 "final is a keyword to make variables constant, methods non-overridable, and classes non-inheritable.
 finally is a block that always runs after try-catch, usually for cleanup.
 finalize() is a method that the garbage collector calls before destroying the object — but it's deprecated now."
+
+------------------------------------------------------------------------------------------------------------------
+Exception Hierarcy
+
+Object
+ └── Throwable
+      ├── Error
+      │    ├── OutOfMemoryError
+      │    ├── StackOverflowError
+      │    └── VirtualMachineError
+      └── Exception
+           ├── IOException(Checked) - Compile time exception
+           │    ├── FileNotFoundException
+           │    └── EOFException
+           ├── SQLException(Checked) - Compile time exception
+           ├── ClassNotFoundException(Checked) - Compile time exception
+           └── RuntimeException(UnChecked)
+                ├── NullPointerException
+                ├── ArrayIndexOutOfBoundsException
+                ├── ArithmeticException
+                └── IllegalArgumentException
+
+How to Create a Custom Exception-
+// Custom exception (checked)
+class InvalidAgeException extends Exception
+
+// Custom exception (unchecked)
+class NegativeNumberException extends RuntimeException

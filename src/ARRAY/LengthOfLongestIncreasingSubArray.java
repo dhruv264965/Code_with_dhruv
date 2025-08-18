@@ -64,7 +64,7 @@ public class LengthOfLongestIncreasingSubArray {
         }
     }
     public static void main(String[] args) {
-        int arr[]={2,4,6,3,4,5,8,9,10,2,10,11,1};
+        int arr[]={2,3,4,6,10,11,15,3,4,5,8,9,10,2,10,11,1};
         System.out.println("-------length Of Longest Increasing SubArray------");
        System.out.println(lengthOfLongestIncreasingSubArray(arr));
         System.out.println("------Print Longest Increasing SubArray and length also-----");

@@ -14,7 +14,7 @@ public class LifeCycleThread extends Thread{
 
     public static void main(String[] args) throws InterruptedException {
         LifeCycleThread t1=new LifeCycleThread();
-        System.out.println(t1.getState());
+        System.out.println(t1.getState());  // NEW
         t1.start();
         System.out.println(t1.getState());
         Thread.sleep(1000);

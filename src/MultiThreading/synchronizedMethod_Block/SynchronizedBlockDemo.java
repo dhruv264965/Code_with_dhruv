@@ -2,9 +2,23 @@ package MultiThreading.synchronizedMethod_Block;
 class CounterBlock{
     private int count=0;
     public void increment(){
+
+        ////
+
+        //  operation
+
+        ////
         synchronized (this){
             count++;
         }
+        ///
+
+        //  operation
+
+
+        ////
+
+
     }
 
     public int getCount() {

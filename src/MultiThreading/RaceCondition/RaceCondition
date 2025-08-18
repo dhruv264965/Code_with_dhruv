@@ -3,7 +3,8 @@ to change it at the same time. In such a scenario threads are “racing” each 
 security vulnerability.
 Example Real world- Imagine Ram and his friend Sham both have access to the same bank account. They both try to withdraw Rs,500 at
                 the same time from different ATMs. The system checks the balance and sees there’s enough money for both withdrawals.
-               Without proper synchronization, the system might allow both transactions to go through, even if the balance is only enough for one, leaving the account overdrawn.
+               Without proper synchronization, the system might allow both transactions to go through, even if the balance is only
+               enough for one, leaving the account overdrawn.
 
 How to prevent-
 1-> Use Atomic Integer class to implement

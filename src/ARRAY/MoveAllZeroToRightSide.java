@@ -12,7 +12,7 @@ public class MoveAllZeroToRightSide {
     }
     static void moveAllZeroRightSide(int arr[],int n,int k){
         // Move non-zero elements to the left
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {   //   int arr[]={1,0,5,7,0,6,0};
             if (arr[i] != 0) {
                 arr[k++] = arr[i];
             }

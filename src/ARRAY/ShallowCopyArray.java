@@ -1,5 +1,6 @@
 package ARRAY;
-
+//A shallow copy creates a new reference to the same memory location as the original array.
+//Changes in one array affect the other.
 public class ShallowCopyArray {
     static void printArray(int arr[]){
         int n= arr.length;

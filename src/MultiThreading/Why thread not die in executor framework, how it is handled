@@ -42,5 +42,6 @@ Set corePoolSize = 0 if you want threads to be killed aggressively
 Configure keepAliveTime to be small
 
 ✅ Summary
-In the Executor framework, threads don't die immediately because the system is optimized to reuse them for future tasks, improving performance.
+In the Executor framework, threads don't die immediately because the system is optimized to reuse them for future tasks,
+improving performance.
 Their lifecycle is managed by ThreadPoolExecutor, based on corePoolSize, maxPoolSize, and keepAliveTime.

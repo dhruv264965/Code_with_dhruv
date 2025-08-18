@@ -24,14 +24,17 @@ public class SimpleProducerConsumer {
               try {
                   String msg= queue.take();
                   System.out.println(" consumer "+msg);
-                  Thread.sleep(1500);
+                  Thread.sleep(3000);
               } catch (InterruptedException e) {
                   e.printStackTrace();
               }
           }
         };
-        new Thread(producer).start();
-        new Thread(consumer).start();
+
+        Thread t1=new Thread(producer);
+        Thread t2=new Thread(consumer);
+        t1.start();
+        t2.start();
     }
 }
 //We use an ArrayBlockingQueue with size 3 to store messages.
