@@ -30,6 +30,7 @@ public class MyController {
 
 MyService created
 Are both same? true
+
 2️⃣ Prototype
 @Component
 @Scope("prototype")

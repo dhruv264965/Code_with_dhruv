@@ -1,6 +1,5 @@
 Runnable Interface:
 Purpose: Represents a task that does not return a result and cannot throw checked exceptions.
-
 Method: Contains a single method run() that takes no arguments and returns void.
 
 Usage: Typically used when you need to execute a task asynchronously without expecting a return value.
@@ -10,7 +9,6 @@ public class MyRunnable implements Runnable {
         // Task implementation goes here
         System.out.println("Hello from Runnable!");
     }
-
     public static void main(String[] args) {
         Runnable myRunnable = new MyRunnable();
         Thread thread = new Thread(myRunnable);

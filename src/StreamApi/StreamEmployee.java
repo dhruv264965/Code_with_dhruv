@@ -73,7 +73,7 @@ public class StreamEmployee {
         Map<String, List<StreamEmployee>> collect = listEmp.stream()
                 .collect(Collectors.groupingBy(StreamEmployee::getDeparment));
         System.out.println(collect);
-        System.out.println("  name the employee whose salary more than 10K");
+        System.out.println("  Name the employee whose salary more than 10K");
         List<StreamEmployee> collect1 = listEmp.stream()
                 .filter(sal -> Integer.parseInt(sal.getSalary()) > 10000)
                 .collect(Collectors.toList());

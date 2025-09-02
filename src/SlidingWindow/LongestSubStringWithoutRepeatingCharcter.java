@@ -35,7 +35,7 @@ public class LongestSubStringWithoutRepeatingCharcter {
         int j = 0;
         while (j < s.length()) {
             char ch = s.charAt(j);
-            if (hp.containsKey(ch)) {   //  // agar hamara character repeat karta hai then i index koupdate kar denge
+            if (hp.containsKey(ch)) {   //  // agar hamara character repeat karta hai then i index ko update kar denge
                 i = Math.max(hp.get(ch), i);
             }
             result = Math.max(result, j - i + 1);
@@ -44,12 +44,31 @@ public class LongestSubStringWithoutRepeatingCharcter {
         }
         return result;
     }
+    public static int lengthOfLongestSubstring(String s) {
+        HashSet<Character> hp=new HashSet<>();
+        int i=0;
+        int maxLength=0;
+        for(int j=0;j<s.length();j++){
+            char ch=s.charAt(j);
+            //if char is duplicate
+            while(hp.contains(ch)){
+                char leftChar=s.charAt(i);
+                hp.remove(leftChar);
+                i++;
+            }
+            //if char is unique  step 1
+            hp.add(ch);
+            maxLength=Math.max(maxLength,(j-i+1));
+        }
+        return maxLength;
+    }
     public static void main(String[] args) {
 //         String s="abcabcbb";
-         String s="pwwkew";
+        // String s="pwwkew";
 //         String s="bbbbb";
-//        String s="geeksforgeeks";
+        String s="geeksforgeeks";
 //        System.out.println(lengthOfLongestSubStringWithoutRepeatingCharacterBruteForce(s));
         System.out.println(lengthOfLongestSubStringWithoutRepeatingCharacterOptimal(s));
+        System.out.println(lengthOfLongestSubstring(s));
     }
 }

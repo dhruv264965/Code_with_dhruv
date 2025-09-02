@@ -11,7 +11,7 @@ public class MoveAllZeroInTheEnd {
             }
         }
         for(int x:result){
-            System.out.println(x);
+            System.out.print(x+" ");
         }
 
     }

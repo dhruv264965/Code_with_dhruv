@@ -46,7 +46,7 @@ public class GroupAnagam {
     }
     public static void main(String[] args) {
         String[] strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
-    //    System.out.println(groupAnagrams(strs));
-        System.out.println(groupAnagramsOptimal(strs));
+        System.out.println(groupAnagrams(strs));
+//        System.out.println(groupAnagramsOptimal(strs));
     }
 }

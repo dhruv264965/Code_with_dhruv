@@ -151,5 +151,10 @@ public class ImportantQuestionBeforeInterview {
                 .findFirst();
         System.out.println(thridNonRepeating.get());
 
+
+//        String str98="abcbda";
+//        str98.chars().mapToObj(ch->(char)ch)
+
+
     }
 }

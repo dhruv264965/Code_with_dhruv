@@ -5,7 +5,7 @@ pairs, which is a fundamentally different concept.
 | Data type                | Stores **single elements**         | Stores **key-value pairs**     |
 | Interface hierarchy      | Extends `Iterable`                 | Does **not** extend `Iterable` |
 | Allows duplicate keys?   | N/A                                | ❌ No, keys must be unique      |
-| Allows duplicate values? | ✅ Yes                              | ✅ Yes                          |
+| Allows duplicate values? | ✅ Yes                              | ✅ Yes                         |
 | Iteration type           | Elements (e.g., Strings, Integers) | Entries (`Map.Entry<K, V>`)    |
 
 🧠 Design Reason (From Java Architecture Perspective)

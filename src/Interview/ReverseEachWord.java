@@ -12,7 +12,7 @@ public class ReverseEachWord {
            for(char ch:word.toCharArray()) {
                 stack.push(ch);
             }
-          //  System.out.println(stack);
+            System.out.println(stack);
             String reversed = "";
             while (!stack.isEmpty()) {
                 reversed += stack.pop();

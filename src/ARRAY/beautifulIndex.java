@@ -2,7 +2,7 @@ package ARRAY;
 
 public class beautifulIndex {
     public static void main(String[] args) {
-        int A[] = {2, 8, 6, 0, 4};
+        int A[] = {2, 8, 9, 0, 4};
         int N = A.length;
         long totalSum = 0;
         for (int num : A) {

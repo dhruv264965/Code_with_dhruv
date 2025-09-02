@@ -23,7 +23,12 @@ public class FibonacciSeries {
         IntStream.range(2, n).forEach(i ->
                 fibList.add(fibList.get(i - 1) + fibList.get(i - 2))
         );
-
         System.out.println(fibList);
+
+//        for(int i=2;i<n;i++){    // by using for loop also we can write
+//            fibList.add(fibList.get(i-1)+fibList.get(i-2));
+//
+//        }
+//        System.out.println(fibList);
     }
 }

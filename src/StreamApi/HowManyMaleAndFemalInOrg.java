@@ -91,8 +91,9 @@ public class HowManyMaleAndFemalInOrg {
                 new Employee(3, "Ashish Shukla", 40, "Male", 70000,"EC"),
                 new Employee(4, "Vandana Shukla", 35, "Female", 96000,"Mech"),
                 new Employee(5, "Amit Shukla", 50, "Male", 96000,"CSE"),
-                new Employee(6, "shiva Shukla", 38, "Male", 58000,"Mech"),
-                new Employee(7, "Ridhika trivedi", 26, "Female", 46000,"CSE")
+                new Employee(6, "Shiva Shukla", 38, "Male", 58000,"Mech"),
+                new Employee(7, "Ridhika trivedi", 26, "Female", 46000,"CSE"),
+                new Employee(8, "Ridhika trivedi", 27, "Female", 46000,"CSE")
         );
         // get employee detils whose salary is greter than average salary
         System.out.println(" get employee detils whose salary is greter than average salary ");
@@ -123,6 +124,21 @@ public class HowManyMaleAndFemalInOrg {
        employees.stream()
                        .collect(Collectors.groupingBy(Employee::getDepartment,Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary))))
                                .forEach((k,v)-> System.out.println(k+ " "+v.map(Employee::getSalary)));
+        System.out.println("----------------------------------------------------------------");
+        System.out.println(" find  second highest salary in each department");
+        Map<String, Optional<Employee>> secondHighestByDept = employees.stream()
+                .collect(Collectors.groupingBy(
+                        Employee::getDepartment,
+                        Collectors.collectingAndThen(
+                                Collectors.toList(),
+                                list -> list.stream()
+                                        .sorted(Comparator.comparingDouble(Employee::getSalary).reversed())
+                                        .skip(1) // skip highest
+                                        .findFirst()
+                        )
+                ));
+        System.out.println(secondHighestByDept);
+
         System.out.println("----------------------------------------------------------------");
         // How many Male and Female in the organization.
         Map<String, Long> getGenderCount = employees.stream()
@@ -329,6 +345,18 @@ public class HowManyMaleAndFemalInOrg {
                 .thenComparing(Employee::getAge).thenComparing(Employee::getDepartment)
         ).toList();
         System.out.println(employees1);
+
+        System.out.println("------------------------------------------------------------");
+       // Find all employees with duplicate names
+        System.out.println(" Find all employees with duplicate names ");
+        Set<String> duplicateNames = employees.stream()
+                .collect(Collectors.groupingBy(Employee::getName, Collectors.counting()))
+                .entrySet().stream()
+                .filter(e -> e.getValue() > 1)
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toSet());
+
+        System.out.println("Duplicate Names: " + duplicateNames);
 
 
     }

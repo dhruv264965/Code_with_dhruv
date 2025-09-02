@@ -54,10 +54,10 @@ public class UpdatedHashSet {
 
         HashSet<Student> studentList = new HashSet<>();
         Student st1 = new Student("Nimit", 1);// here s1,s2,s3 have three different object so if we override hashcode and equals
-        Student st2 = new Student("Rahul", 3);//method still we will get 3 as size if not override also we will get 3 as size
-        Student st3 = new Student("Nimit", 2);//becaz all three have different hashcode only in case we will get size 2 when
-                                     // provide same id also if we provide same id and same also same then hashcode of that object is
-                               /// same as second object . how i show in line number 74
+        Student st2 = new Student("Rahul", 3);// method still we will get 3 as size if not override also we will get 3 as size
+        Student st3 = new Student("Nimit", 2);// becaz all three have different hashcode only in case we will get size 2 when
+        // provide same id also if we provide same id and same also same then hashcode of that object is
+        // same as second object . how i show in line number 74
 
 
 

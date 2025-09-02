@@ -2,7 +2,7 @@
 Defination->A factory design pattern says that just define interface or abstract class for creating an object
             but let the subclasses decide which class to instantiate. In other word subclasses are responsible to
             create the instance of a class
--> Agar hamare pass parent class hai and bahut sare childclass hai if we want child class object then we use factory design pattern
+-> Agar hamare pass parent class hai and bahut sare child class hai if we want child class object then we use factory design pattern
 When to Use Factory Method Design Pattern?
 Object Creation is Complex – When the process of creating objects is complicated, such as requiring multiple configurations or dependencies.
 Decoupling Object Creation from Client Code – If you want to avoid exposing the instantiation logic and keep the client code independent of specific class implementations.

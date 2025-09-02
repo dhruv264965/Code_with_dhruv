@@ -26,17 +26,28 @@ public class SortCharacterByFreqAndLexical {
                 }
                 return a.getKey().compareTo(b.getKey()); // If frequencies are the same, sort lexicographically
             });
-
-            // Step 4: Build the sorted result string
-            StringBuilder result = new StringBuilder();
-            for (Map.Entry<Character, Integer> entry : list) {
-                char character = entry.getKey();
-                int frequency = entry.getValue();
-                for (int i = 0; i < frequency; i++) {
-                    result.append(character); // Append character 'frequency' times
-                }
+            System.out.println(list);
+            for(int i=0;i< list.size();i++) {
+                System.out.print(list.get(i).getKey()+"");
             }
-            return result.toString();
+            System.out.println();
+            StringBuilder sb = new StringBuilder();
+            for (Map.Entry<Character,Integer> e : list) {
+                for (int i = 0; i < e.getValue(); i++) sb.append(e.getKey());
+            }
+
+            System.out.println(sb.toString()); // eeabrt
+            // Step 4: Build the sorted result string
+//            StringBuilder result = new StringBuilder();
+//            for (Map.Entry<Character, Integer> entry : list) {
+//                char character = entry.getKey();
+//                int frequency = entry.getValue();
+//                for (int i = 0; i < frequency; i++) {
+//                    result.append(character); // Append character 'frequency' times
+//                }
+//            }
+//            return result.toString();
+            return "";
         }
 
         public static void main(String[] args) {

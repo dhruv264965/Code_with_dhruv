@@ -1,4 +1,4 @@
-Q->What is stream and parallel Stream injava 8
+Q->What is stream and parallel Stream in java 8
 ans->1. stream()
      Definition: A sequential stream that processes elements one at a time in a single thread.
      Execution: Processes data in the order it appears (maintains encounter order for ordered collections like lists).
@@ -8,7 +8,7 @@ ans->1. stream()
      List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
      names.stream()
           .forEach(name -> System.out.println(name + " processed by " + Thread.currentThread().getName()));
-    output-Alice processed by main
+     output-Alice processed by main
            Bob processed by main
            Charlie processed by main
 2. parallelStream()

@@ -36,7 +36,7 @@ public class SortCharacterMyFrequency {
     }
 
     public static void main(String[] args) {
-        String s="tree";
+        String s="treea";
         System.out.println(frequencySort(s));
     }
 }

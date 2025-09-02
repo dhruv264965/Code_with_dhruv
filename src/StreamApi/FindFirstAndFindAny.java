@@ -1,5 +1,6 @@
 package StreamApi;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,7 +21,7 @@ public class FindFirstAndFindAny {
 
 
       ///Sequence stream
-      List<String> names = List.of("Alice", "Bob", "Charlie", "Diana");
+      List<String> names = Arrays.asList("Alice", "Bob", "Charlie", "Diana");
 
       // findFirst
       Optional<String> first = names.stream().findFirst();

@@ -20,9 +20,9 @@ public class Main extends Parentt {
         System.out.println("Child Class Default Constructor");
     }
 
-    Main (String s){
-        System.out.println("Child Class Param Constructor "+s);// 2
-    }
+//    Main (String s){
+//        System.out.println("Child Class Param Constructor "+s);// 2
+//    }
 
     public static void main(String[] args) {
         Main obj = new Main();

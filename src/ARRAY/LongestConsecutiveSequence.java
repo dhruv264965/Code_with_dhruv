@@ -11,14 +11,14 @@ import java.util.HashSet;
 //Input: nums = [100, 4, 200, 1, 3, 2]
 //Output: 4
 //Explanation: The longest consecutive sequence is [1, 2, 3, 4].
-public class
-             LongestConsecutiveSequence {
+public class LongestConsecutiveSequence {
     public static int countLongestConsecutiveSequenceBruteForce(int arr[]){
         Arrays.sort(arr);
         int count =1;               // SPACE-O(1) (Constant space usage).
         int maxCount=1;              // TIME- O(n log n) (due to sorting) + O(n) (due to iteration) = O(n log n).
         for(int i=1;i< arr.length;i++){
-            if (arr[i]>arr[i-1] && arr[i]==arr[i-1]+1){
+            if (arr[i]>arr[i-1] && arr[i]==arr[i-1]+1){ // arr[i]==arr[i-1]+1 - ye hame next element find karne mai help
+                   //                                    1 ke baad 2 hai tabhi ham count increase karenegej
                 count++;
             }
             else {
