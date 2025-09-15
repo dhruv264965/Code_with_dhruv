@@ -13,7 +13,7 @@ if we want to exclude some of the beans then we use
 @SpringBootApplication-@ComponentScan
                        @EnableAutoConfiguration
                        @Configuration
-----------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 @ComponentScan
 1->Tells Spring where to find beans/components whenever it see @Component,@Service, @Repository,@Controller it
    help to discover the bean before manage by DI

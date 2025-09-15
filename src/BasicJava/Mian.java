@@ -23,7 +23,7 @@ public class Mian {
    StaticFlow s= new ch();
       s.start(); // this is equivalent StaticFlow.start(); at compile time ..
       s.hi();
-      // s.hellow(); //  comile time error we will get The reference s is of type StaticFlow, but hellow() is not declared in StaticFlow.
+//       s.hellow(); //  comile time error we will get The reference s is of type StaticFlow, but hellow() is not declared in StaticFlow.
 
 
     }

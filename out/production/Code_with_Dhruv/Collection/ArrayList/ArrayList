@@ -13,3 +13,18 @@ Generics: ArrayList supports generics, which means it can hold elements of a spe
            explicit type casting when retrieving elements from the list.
 Iterable: ArrayList implements the Iterable interface, which means it can be easily traversed using iterators or enhanced for loops.
 Not Synchronized: This class is roughly equivalent to Vector, except it is unsynchronized.
+
+if we want to make synchronised we can use ArrayOnCopyArray
+--------------------------------------------------------------------------------
+
+Why Set Does Not Allow Duplicates
+
+Set uses hashCode() + equals() to check if an element already exists.
+
+If another object with the same hashCode and equals() result exists, it won’t be added.
+
+-----------------------------------------------------------------------------
+Set does not allow duplicates because it uses hashing or sorting to maintain uniqueness. For null values,
+ HashSet and LinkedHashSet allow only one null (as duplicates are not allowed), while TreeSet does not allow null
+ at all because it needs to compare elements for sorting. On the other hand, ArrayList allows duplicates and
+ multiple null values since it simply stores elements in an array.

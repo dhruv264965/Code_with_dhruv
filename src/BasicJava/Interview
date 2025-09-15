@@ -10,12 +10,12 @@ class Parent {
 
 class Main extends Parent {
     Main() {
-        this("Hello");
+        this("Hello");  // calls Child Parameterized Constructor
         System.out.println("Child Default Constructor");
     }
 
     Main(String msg) {
-        super();
+        super();  // calls Parent Default Constructor
         System.out.println("Child Parameterized Constructor: " + msg);
     }
 

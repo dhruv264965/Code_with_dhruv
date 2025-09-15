@@ -19,7 +19,7 @@ public class TopKFrquentElement {
         return result;
     }
     public static  int[] topKFrequentOptimal(int[] nums, int k) {
-        // aproach- priority Queue nlog(k) TC if k is less then less complexity compare to sorting
+        // approach- priority Queue nlog(k) TC if k is less then less complexity compare to sorting
         HashMap<Integer,Integer> hp=new HashMap<>();
         for(int x:nums){
             hp.put(x,hp.getOrDefault(x,0)+1);

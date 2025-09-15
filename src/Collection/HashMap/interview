@@ -1,3 +1,4 @@
+
 Q->suppose we have employee class and we want to use that class as a key in hashmap so what chhanges is requried ?
 answer->To use an Employee class as a key in a HashMap, you need to ensure that the Employee class provides proper
            implementations of the hashCode() and equals() methods. This is because HashMap uses these methods

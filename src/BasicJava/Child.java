@@ -12,11 +12,11 @@ class Parent {
 
 public class Child extends Parent {
 
-//    Child (){
-//        //super("dhruv");
-////         this("dhruv");
-//        System.out.println("Child Class Default Constructor");
-//    }
+    Child (){
+        super("dhruv");
+         //this("dhruv");
+        System.out.println("Child Class Default Constructor");
+    }
 
     void start (String s){
 //        super(s);

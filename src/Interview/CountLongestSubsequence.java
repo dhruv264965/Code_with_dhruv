@@ -4,26 +4,25 @@ import java.util.HashSet;
 
 public class CountLongestSubsequence {
     public static void main(String[] args) {
-        int arr[] = {3, 5, 3, 1, 6, 8, 6, 3, 1, 55, 6, 6};
-        HashSet<Integer> hp = new HashSet<>();
-        for (int num : arr) {
-            hp.add(num);
+        int arr[] = {100,4,200,3,2,1};
+        HashSet<Integer>hashSet=new HashSet<>();
+        for(int x:arr){
+            hashSet.add(x);
         }
-        System.out.println(hp);
-        int max_length = 0;
-        for (int num : hp) {
-            if (!hp.contains(num - 1)) {
-
-                int currentNumber = num;
-                int currentLength = 1;
-                while (hp.contains(currentNumber + 1)) {
-                    currentNumber++;
-                    currentLength++;
+        int maxCount =0;
+        for(int y:hashSet){
+            if(!hashSet.contains(y-1)){
+                int currentNum=y;
+                int currentCount=0;
+                while (hashSet.contains(currentNum)){
+                    currentNum++;
+                    currentCount++;
                 }
-                max_length = Math.max(currentLength, max_length);
+                maxCount=Math.max(currentCount,maxCount);
+
             }
         }
-        System.out.println(max_length);
+        System.out.println(maxCount);
     }
 }
 

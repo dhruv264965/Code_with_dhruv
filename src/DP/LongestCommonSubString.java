@@ -6,7 +6,7 @@ public class LongestCommonSubString {
 
         // generate all substrings of s1
         for (int i = 0; i < s1.length(); i++) {
-            for (int j = i + 1; j <= s1.length(); j++) {
+            for (int j = i+1 ; j <= s1.length(); j++) {
                 String sub = s1.substring(i, j);
 
                 // check if this substring is also in s2

@@ -63,7 +63,7 @@ public class LinkedHashMapExample {
 
     public static void main(String[] args) {
         // LinkedHashMap preserves insertion order
-        Map<Employeeee, Integer> employeeMap = new LinkedHashMap<>();
+        Map<Employeeee, Integer> employeeMap = new HashMap<>();
 
         // Insert custom class objects
         employeeMap.put( new Employeeee(3, "dhruv", 70000),3);
